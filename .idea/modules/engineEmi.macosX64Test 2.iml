@@ -5,11 +5,12 @@
       <configuration version="3" platform="Native " allPlatforms="Native []" useProjectSettings="false" isTestModule="true" externalProjectId="engineEmi">
         <dependsOnModuleNames>engineEmi_commonTest</dependsOnModuleNames>
         <sourceSets>
+          <sourceSet>engineEmi.macosX64Main</sourceSet>
           <sourceSet>engineEmi.commonTest</sourceSet>
           <sourceSet>engineEmi.commonMain</sourceSet>
-          <sourceSet>engineEmi.iosX64Main</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
+        <externalSystemTestTasks>macosX64Test|engineEmi:macosX64Test|macosX64</externalSystemTestTasks>
         <compilerSettings />
         <compilerArguments>
           <option name="languageVersion" value="1.3" />

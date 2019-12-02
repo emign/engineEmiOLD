@@ -1,4 +1,4 @@
-import com.soywiz.korge.gradle.*
+import com.soywiz.korge.gradle.korge
 
 buildscript {
     repositories {
@@ -9,7 +9,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("com.soywiz.korlibs.korge.plugins:korge-gradle-plugin:1.4.0")
+        classpath("com.soywiz.korlibs.korge.plugins:korge-gradle-plugin:1.4.2")
         classpath("org.jetbrains.dokka:dokka-gradle-plugin:0.10.0")
     }
 }
@@ -17,24 +17,25 @@ buildscript {
 apply(plugin = "korge")
 apply(plugin = "org.jetbrains.dokka")
 
+repositories {
+    mavenCentral()
+}
+
 korge {
     id = "me.emig.engineEmi"
     name = "EngineEmi"
     description = ""
-    orientation = Orientation.LANDSCAPE
     jvmMainClassName = "MainKt"
-
     supportShapeOps()
     supportTriangulation()
     supportDragonbones()
     supportBox2d()
 }
 
-tasks {
-    val dokka by getting(org.jetbrains.dokka.gradle.DokkaTask::class) {
-        outputFormat = "html"
-        outputDirectory = "dokka"
-    }
+
+tasks.register<org.jetbrains.dokka.gradle.DokkaTask>("dokka2") {
+    outputFormat = "html"
+    outputDirectory = "dokka"
 }
 
 tasks.register<DefaultTask>("openInBrowser") {
@@ -42,10 +43,12 @@ tasks.register<DefaultTask>("openInBrowser") {
     dependsOn("jsWebRun")
 }
 
+tasks.register<DefaultTask>("openLocalJNA") {
+    group = "engineemi"
+    dependsOn("runJvmFirstThread")
+}
+
 tasks.register<DefaultTask>("openLocal") {
     group = "engineemi"
     dependsOn("runJvm")
 }
-
-kotlin.sourceSets["commonMain"].kotlin.srcDir("src")
-kotlin.sourceSets["commonMain"].resources.srcDir("resources")
