@@ -9,7 +9,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("com.soywiz.korlibs.korge.plugins:korge-gradle-plugin:1.4.2")
+        classpath("com.soywiz.korlibs.korge.plugins:korge-gradle-plugin:1.4.1")
         classpath("org.jetbrains.dokka:dokka-gradle-plugin:0.10.0")
     }
 }
@@ -33,7 +33,7 @@ korge {
 }
 
 
-tasks.register<org.jetbrains.dokka.gradle.DokkaTask>("dokka2") {
+tasks.register<org.jetbrains.dokka.gradle.DokkaTask>("createDokkaDocs") {
     outputFormat = "html"
     outputDirectory = "dokka"
 }
