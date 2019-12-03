@@ -13,6 +13,7 @@ import com.soywiz.korio.async.launch
 import engineEmi.Bodies.Ebody
 import engineEmi.CanvasElements.CanvasElement
 import engineEmi.Samples.HugeSample.HugeSample
+import kotlinx.coroutines.GlobalScope
 
 /**
  * Die Game-Engine. Sie ist ein Singleton und wird mit [Engine.run] gestartet.
@@ -35,12 +36,15 @@ class Engine {
      * @param sample Lädt eine Beispielszene
      */
 
-    suspend fun run(sample: Boolean = false, body: suspend () -> Unit) {
+    fun run(sample: Boolean = false, body: suspend () -> Unit) {
         var nbody = body
         if (sample) {
             nbody = HugeSample(this).invoke()
         }
-        main(nbody)
+        GlobalScope.launch {
+            main(nbody)
+        }
+
     }
 
     suspend fun main(body: suspend () -> Unit) = Korge(quality = GameWindow.Quality.PERFORMANCE, title = "Engine Emi") {

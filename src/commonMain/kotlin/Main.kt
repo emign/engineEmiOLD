@@ -13,8 +13,8 @@ val engine = Engine()
  * Hierzu kann man die Methoden [Engine.registerCanvasElement], [Engine.registerBody] und [Engine.register] verwenden.
  * Wir der Parameter sample auf true gesetzt, wird eine Funktionsdemo automatisch geladen
  */
-suspend fun main() {
-    engine.run(sample = true) {
+fun main() {
+    engine.run {
 
         // HIER WIRD PROGRAMMIERT
 
