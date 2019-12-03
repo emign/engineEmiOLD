@@ -1,4 +1,16 @@
-### - Korge 1.4.2 support (Build weiterhin in 1.4.1) - Added: MacOsNative target (HEAD -> master)
+### - Korge 1.4.2 support (auch build) - Added: MacOsNative target (HEAD -> master)
+>Tue, 3 Dec 2019 09:26:44 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+- Engine ist jetzt Objekt und kein Singleton mehr. (geänderter engine-Start s. Docs)
+- Dokka Generierung umbenannt und an task Management angepasst.
+
+
+
+### - Korge 1.4.2 support (Build weiterhin in 1.4.1) - Added: MacOsNative target (origin/master)
 >Tue, 3 Dec 2019 09:25:32 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -10,7 +22,7 @@
 
 
 
-### Added: Korge 1.4.2 support Added: MacOsNative target (origin/master)
+### Added: Korge 1.4.2 support Added: MacOsNative target
 >Mon, 2 Dec 2019 20:54:26 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
