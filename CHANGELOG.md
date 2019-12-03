@@ -1,4 +1,14 @@
-### - Korge 1.4.2 support (auch build) - Added: MacOsNative target (HEAD -> master)
+### Github actions: Added rm (HEAD -> master)
+>Tue, 3 Dec 2019 14:10:20 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+
+
+
+### - Korge 1.4.2 support (auch build) - Added: MacOsNative target (origin/master)
 >Tue, 3 Dec 2019 09:57:01 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -10,7 +20,7 @@
 
 
 
-### - Korge 1.4.2 support (auch build) - Added: MacOsNative target (origin/master)
+### - Korge 1.4.2 support (auch build) - Added: MacOsNative target
 >Tue, 3 Dec 2019 09:26:44 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
