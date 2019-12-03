@@ -6,6 +6,15 @@
 
 # Changelog
 
+## 0.14
+### Added
+- Korge 1.4.2 Support
+- MacOSX64 native target
+
+## Changed
+- Engine ist jetzt Objekt und kein Singleton mehr. (geänderter engine-Start s. Docs)
+- Dokka Generierung umbenannt und an task Management angepasst.
+
 ## 0.13c
 ### Added
 - Support für github actions
