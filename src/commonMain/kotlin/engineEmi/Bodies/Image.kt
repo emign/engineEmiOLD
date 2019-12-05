@@ -19,7 +19,7 @@ class Image(
     var width: Number = 1,
     var height: Number = 1,
     angle: Float = 0f,
-    val imageFile: String = "hut.png",
+    val imageFile: String = "",
     density: Float = 1f,
     friction: Float = 0.2f,
     restitution: Float = 0.0f,

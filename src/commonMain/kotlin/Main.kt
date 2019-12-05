@@ -14,7 +14,7 @@ val engine = Engine()
  * Wir der Parameter sample auf true gesetzt, wird eine Funktionsdemo automatisch geladen
  */
 fun main() {
-    engine.run {
+    engine.run(sample = true) {
 
         // HIER WIRD PROGRAMMIERT
 

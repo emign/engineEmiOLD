@@ -1,4 +1,14 @@
-### Github actions: Added rm (HEAD -> master)
+### Resources Directory umstrukturiert (HEAD -> master)
+>Thu, 5 Dec 2019 08:01:03 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+
+
+
+### Github actions: Added rm (origin/master)
 >Tue, 3 Dec 2019 14:29:37 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -18,7 +28,7 @@
 
 
 
-### - Korge 1.4.2 support (auch build) - Added: MacOsNative target (origin/master)
+### - Korge 1.4.2 support (auch build) - Added: MacOsNative target
 >Tue, 3 Dec 2019 09:57:01 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
