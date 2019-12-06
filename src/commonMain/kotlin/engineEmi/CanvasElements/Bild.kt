@@ -35,4 +35,6 @@ open class Bild(
         }.scale(skalierung)
 
     }
+
+
 }

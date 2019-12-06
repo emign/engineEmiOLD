@@ -1,9 +1,12 @@
 package engineEmi
 
 import com.soywiz.klock.milliseconds
+import com.soywiz.korev.keys
+import com.soywiz.korev.mouse
 import com.soywiz.korge.Korge
 import com.soywiz.korge.box2d.WorldView
 import com.soywiz.korge.box2d.worldView
+import com.soywiz.korge.input.*
 import com.soywiz.korge.view.position
 import com.soywiz.korge.view.scale
 import com.soywiz.korgw.GameWindow
@@ -12,6 +15,8 @@ import com.soywiz.korio.async.delay
 import com.soywiz.korio.async.launch
 import engineEmi.Bodies.Ebody
 import engineEmi.CanvasElements.CanvasElement
+import engineEmi.Input.Input
+import engineEmi.Input.InputAction
 import engineEmi.Samples.HugeSample.HugeSample
 import kotlinx.coroutines.GlobalScope
 
@@ -24,19 +29,27 @@ import kotlinx.coroutines.GlobalScope
 class Engine {
     var canvasElements = mutableListOf<CanvasElement>()
     var bodies = mutableListOf<Ebody>()
+    var inputActions = mutableListOf<InputAction>()
     var view = ViewWindow()
     var viewHeight = 0.0
         private set
     var viewWidth = 0.0
         private set
     var sample = false
+    var input = emptyList<Input>()
 
     /**
      * Startet die Engine. Kann Parameter zur Konfiguration übernehmen
      * @param sample Lädt eine Beispielszene
      */
 
-    fun run(sample: Boolean = false, body: suspend () -> Unit) {
+    fun run(
+        sample: Boolean = false,
+        input: Input = Input.NONE,
+        inputs: List<Input> = emptyList<Input>(),
+        body: suspend () -> Unit
+    ) {
+        this.input = listOf(input).plus(inputs)
         var nbody = body
         if (sample) {
             nbody = HugeSample(this).invoke()
@@ -51,7 +64,6 @@ class Engine {
         body()
         view.width = this.views.virtualWidth
         view.height = this.views.virtualHeight
-
         views.clearColor = Colors.WHITE
         // Physik
         worldView {
@@ -84,7 +96,21 @@ class Engine {
             }
 
         }
+
+        // INPUT
+        keys {
+            onKeyDown { inputActions.onEach { keyboardAction -> keyboardAction.sendEvent(it) } }
+            onKeyUp { inputActions.onEach { keyboardAction -> keyboardAction.sendEvent(it) } }
+
+        }
+
+        mouse {
+            onDown { inputActions.onEach { mouseAction -> { println("mouse");mouseAction.sendEvent(it) } } }
+            onUp { inputActions.onEach { mouseAction -> mouseAction.sendEvent(it) } }
+            onClick { inputActions.onEach { mouseAction -> { println("mouse");mouseAction.sendEvent(it) } } }
+        }
     }
+
 
     suspend fun WorldView.registerBodyWithWorld(body: Ebody) {
         body.initForWorld(this.world)
@@ -106,7 +132,6 @@ class Engine {
         bodies.add(body)
     }
 
-
     /**
      * Registriert einen [Ebody] oder ein [CanvasElement] bei der Engine
      * Es ist auch möglich Arrays und Collections zu registrieren.
@@ -121,6 +146,16 @@ class Engine {
             o is CanvasElement -> registerCanvasElement(o)
         }
     }
+
+    fun registerInput(action: InputAction) {
+        inputActions.add(action)
+    }
+
+    fun registerInputs(actions: Collection<InputAction>) {
+        actions.forEach { registerInput(it) }
+    }
+
+
 }
 
 class ViewWindow {
