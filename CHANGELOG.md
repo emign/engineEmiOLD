@@ -1,4 +1,15 @@
-### Resources Directory umstrukturiert (HEAD -> master)
+### Korge features entfernt, die nicht notwendig sind. Sollte Performance Optimierung mit sich bringen (HEAD -> master)
+>Sat, 7 Dec 2019 16:34:51 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Resources Directory umstrukturiert (musicAndSound)
 >Thu, 5 Dec 2019 08:01:03 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)

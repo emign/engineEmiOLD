@@ -6,8 +6,8 @@
         <dependsOnModuleNames>engineEmi_commonTest</dependsOnModuleNames>
         <sourceSets>
           <sourceSet>engineEmi.iosArm64Main</sourceSet>
-          <sourceSet>engineEmi.commonMain</sourceSet>
           <sourceSet>engineEmi.commonTest</sourceSet>
+          <sourceSet>engineEmi.commonMain</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <compilerSettings />
