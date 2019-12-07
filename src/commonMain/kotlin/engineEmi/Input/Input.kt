@@ -1,78 +1,67 @@
 package engineEmi.Input
 
-import com.soywiz.korev.*
-import com.soywiz.korge.input.GamePadEvents
 
-enum class Input {
-    MOUSE, KEYBOARD, GAMEPAD, NONE
-}
+import com.soywiz.korev.Key
+import com.soywiz.korev.MouseButton
+import com.soywiz.korma.geom.Point
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 
-enum class InputEvent {
-    ONDOWN, ONUP, ONCLICK
-}
 
-class LastKeyEvent(val event: KeyEvent, val timestamp: Int)
-class KeyboardAction(
-    val key: Key,
-    val eventType: KeyEvent.Type = KeyEvent.Type.DOWN,
-    val target: InputReactable,
-    var lastInputThreshold: Int = 100
-) : InputAction() {
-    val inputType = KeyEvent.Type.DOWN
-    var pressedKey = Key.UNKNOWN
-    lateinit var lastEvent: LastKeyEvent
+object Keyboard {
+    //val keys = Key.values().associate { it to false }.toMutableMap()
 
-    override fun sendKeyEvent(event: KeyEvent) {
-        pressedKey = event.key
-        lastEvent = LastKeyEvent(event, 100)
-        if (pressedKey == this.key && event.type == eventType) {
-            // if (lastEvent.isInitialized() && lastEvent.timestamp <= now-thresshold){
-            target.reactToKeyboardInputs(listOf(lastEvent.event.key), eventType)
-            // } else {
-            target.reactToKeyboardInput(pressedKey, inputType)
+    var keys = Key.values().associate { it to false }.toMutableMap()
+    val mutex = Mutex()
+    suspend fun keyPressed(key: Key) {
+        mutex.withLock {
+            keys[key] = true
         }
-
-
     }
 
-}
-
-class MouseAction(
-    val button: MouseButton,
-    val eventType: MouseEvent.Type = MouseEvent.Type.CLICK,
-    val target: InputReactable
-) : InputAction() {
-    val inputType = MouseEvent.Type.CLICK
-    var pressedButton = MouseButton.LEFT
-
-    override fun sendMouseEvent(mouseEvents: MouseEvents) {
-
-        runAction()
-    }
-
-    fun runAction() {
-        target.reactToMouseInput(inputType)
-    }
-
-
-}
-
-
-abstract class InputAction {
-    open fun sendKeyEvent(keyEvent: KeyEvent) {}
-    open fun sendMouseEvent(mouseEvents: MouseEvents) {}
-    open fun sendGamepadEvent(gamepadEvents: GamePadEvents) {}
-
-    fun sendEvent(event: Any) {
-
-        when (event) {
-            is KeyEvent -> sendKeyEvent(event)
-            is MouseEvents -> {
-                println("Triggered"); sendMouseEvent(event)
+    suspend fun keyReleased(key: Key) {
+        mutex.withLock {
+            if (keys.contains(key)) {
+                keys[key] = false
             }
-            is GamePadEvents -> sendGamepadEvent(event)
 
         }
     }
+
+    fun isKeyDown(key: Key): Boolean {
+        return keys.getOrElse(key) { return false }
+    }
+
 }
+
+object Mouse {
+    var buttons = MouseButton.values().associate { it to false }.toMutableMap()
+    var position = Point()
+    val x
+        get() = position.x
+    val y
+        get() = position.y
+
+
+    fun buttonPressed(button: MouseButton) {
+        buttons[button] = true
+    }
+
+    suspend fun buttonReleased(button: MouseButton) {
+
+        buttons[button] = false
+
+    }
+
+    fun isButtonDown(button: MouseButton): Boolean {
+        return buttons.getOrElse(button) { return false }
+    }
+
+    fun movedTo(position: Point) {
+        this.position = position
+    }
+}
+
+
+
 

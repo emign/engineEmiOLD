@@ -1,27 +1,31 @@
 import com.soywiz.korev.Key
-import com.soywiz.korev.KeyEvent
-import com.soywiz.korev.MouseEvent
 import com.soywiz.korim.color.Colors
 import com.soywiz.korim.color.RGBA
 import engineEmi.CanvasElements.Kreis
+import engineEmi.Input.Keyboard
+import engineEmi.Input.Mouse
 
 class BeweglicherKreis(radius: Int = 50, x: Int = 100, y: Int = 100, fuellFarbe: RGBA = Colors.ALICEBLUE) :
     Kreis(radius = radius, x = x, y = y, fuellFarbe = fuellFarbe) {
-    override fun reactToKeyboardInput(key: Key, type: KeyEvent.Type) {
-        println("gedrückt")
-        when (key) {
-            Key.LEFT -> x -= 10
-            Key.RIGHT -> x += 10
-            Key.DOWN -> y += 10
-            Key.UP -> y -= 10
-        }
-    }
 
-    override fun reactToKeyboardInputs(keys: Collection<Key>, type: KeyEvent.Type) {
-        keys.forEach { reactToKeyboardInput(it, type) }
-    }
+    override suspend fun animate() {
+        if (Keyboard.isKeyDown(Key.DOWN))
+            y++
+        if (Keyboard.isKeyDown(Key.UP))
+            y--
+        if (Keyboard.isKeyDown(Key.LEFT))
+            x--
+        if (Keyboard.isKeyDown(Key.RIGHT))
+            x++
+        if (Keyboard.isKeyDown(Key.SPACE))
+            radius = radius.toInt() + 1
+        if (Keyboard.isKeyDown(Key.X))
+            radius = radius.toInt() - 1
 
-    override fun reactToMouseInput(type: MouseEvent.Type) {
-        println("$type")
+        x = Mouse.x
+        y = Mouse.y
+
     }
 }
+
+

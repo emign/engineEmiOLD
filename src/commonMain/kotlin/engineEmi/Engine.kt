@@ -1,6 +1,8 @@
 package engineEmi
 
 import com.soywiz.klock.milliseconds
+import com.soywiz.korev.KeyEvent
+import com.soywiz.korev.addEventListener
 import com.soywiz.korev.keys
 import com.soywiz.korev.mouse
 import com.soywiz.korge.Korge
@@ -15,8 +17,8 @@ import com.soywiz.korio.async.delay
 import com.soywiz.korio.async.launch
 import engineEmi.Bodies.Ebody
 import engineEmi.CanvasElements.CanvasElement
-import engineEmi.Input.Input
-import engineEmi.Input.InputAction
+import engineEmi.Input.Keyboard
+import engineEmi.Input.Mouse
 import engineEmi.Samples.HugeSample.HugeSample
 import kotlinx.coroutines.GlobalScope
 
@@ -29,7 +31,7 @@ import kotlinx.coroutines.GlobalScope
 class Engine {
     var canvasElements = mutableListOf<CanvasElement>()
     var bodies = mutableListOf<Ebody>()
-    var inputActions = mutableListOf<InputAction>()
+
     var view = ViewWindow()
     var viewHeight = 0.0
         private set
@@ -45,11 +47,9 @@ class Engine {
 
     fun run(
         sample: Boolean = false,
-        input: Input = Input.NONE,
         inputs: List<Input> = emptyList<Input>(),
         body: suspend () -> Unit
     ) {
-        this.input = listOf(input).plus(inputs)
         var nbody = body
         if (sample) {
             nbody = HugeSample(this).invoke()
@@ -97,17 +97,21 @@ class Engine {
 
         }
 
+
+
+        addEventListener<KeyEvent> { }
+
         // INPUT
         keys {
-            onKeyDown { inputActions.onEach { keyboardAction -> keyboardAction.sendEvent(it) } }
-            onKeyUp { inputActions.onEach { keyboardAction -> keyboardAction.sendEvent(it) } }
-
+            onKeyDown { Keyboard.keyPressed(it.key) }
+            onKeyUp { Keyboard.keyReleased(it.key) }
         }
 
         mouse {
-            onDown { inputActions.onEach { mouseAction -> { println("mouse");mouseAction.sendEvent(it) } } }
-            onUp { inputActions.onEach { mouseAction -> mouseAction.sendEvent(it) } }
-            onClick { inputActions.onEach { mouseAction -> { println("mouse");mouseAction.sendEvent(it) } } }
+            onDown { }
+            onUp { }
+            onClick { }
+            onMove { Mouse.movedTo(it.currentPos) }
         }
     }
 
@@ -145,14 +149,6 @@ class Engine {
             o is Ebody -> registerBody(o)
             o is CanvasElement -> registerCanvasElement(o)
         }
-    }
-
-    fun registerInput(action: InputAction) {
-        inputActions.add(action)
-    }
-
-    fun registerInputs(actions: Collection<InputAction>) {
-        actions.forEach { registerInput(it) }
     }
 
 
