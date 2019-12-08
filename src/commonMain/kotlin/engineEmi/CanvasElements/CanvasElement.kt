@@ -1,14 +1,16 @@
 package engineEmi.CanvasElements
 
 
+import com.soywiz.korev.MouseEvent
 import com.soywiz.korge.view.Container
 import com.soywiz.korge.view.sgraphics
+import engineEmi.Input.MouseEventReacteable
 
 
 abstract class CanvasElement(
     x: Double,
     y: Double
-) : Container() {
+) : Container(), MouseEventReacteable {
 
     init {
         super.x = x
@@ -46,4 +48,6 @@ abstract class CanvasElement(
      * Zeichnet das Objekt. Siehe Implementierung von [Kreis] oder [Rechteck] für Beispiele
      */
     abstract fun updateGraphics()
+
+    override fun reactToMouseEvent(event: MouseEvent) {}
 }

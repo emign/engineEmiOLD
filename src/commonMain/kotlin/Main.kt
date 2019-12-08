@@ -1,6 +1,8 @@
 import engineEmi.Bodies.Ebody
 import engineEmi.CanvasElements.CanvasElement
+import engineEmi.CircleTest
 import engineEmi.Engine
+
 
 /**
  * Das Default (und eigentlich immer) das einzige Engine-Objekt
@@ -14,7 +16,10 @@ val engine = Engine()
  * Wir der Parameter sample auf true gesetzt, wird eine Funktionsdemo automatisch geladen
  */
 fun main() {
-    engine.run(sample = true) {
+    engine.run {
+
+        val test = CircleTest()
+        engine.registerBody(test)
 
         // HIER WIRD PROGRAMMIERT
 

@@ -1,4 +1,4 @@
-### WorldView zentriert (HEAD -> master)
+### WorldView zentriert (origin/master)
 >Sun, 8 Dec 2019 23:28:51 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -9,7 +9,29 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### x,y,radius werden nun korrekt als Double weiter gegeben (origin/master)
+### ReactToMousevent für bodies (origin/Inputs, Inputs)
+>Sun, 8 Dec 2019 23:28:00 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### x,y,radius werden nun korrekt als Double weiter gegeben (ü_arrays_sortierung)
+>Sun, 8 Dec 2019 16:24:01 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### x,y,radius werden nun korrekt als Double weiter gegeben
 >Sun, 8 Dec 2019 14:16:49 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -17,6 +39,60 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 >Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
 
 Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### x,y,radius werden nun korrekt als Double weiter gegeben
+>Sun, 8 Dec 2019 14:01:48 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### x,y,radius werden nun korrekt als Double weiter gegeben
+>Sun, 8 Dec 2019 13:58:21 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Korge features entfernt, die nicht notwendig sind. Sollte Performance Optimierung mit sich bringen
+>Sun, 8 Dec 2019 13:55:33 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Keyboard Input hinzugefügt. Mouse Movement hinzugefügt
+>Sat, 7 Dec 2019 16:33:46 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Zwischewnstand
+>Fri, 6 Dec 2019 12:41:44 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
 
 
 
