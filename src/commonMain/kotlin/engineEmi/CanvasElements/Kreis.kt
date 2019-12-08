@@ -64,11 +64,3 @@ open class Kreis(
         }
     }
 }
-
-class AnimierterKreis : Kreis() {
-    override suspend fun animate() {
-        super.animate()
-        x++
-        y++
-    }
-}
