@@ -22,10 +22,10 @@ open class Kreis(
     randFarbe: RGBA = Colors.RED,
     randDicke: Number = 0.0
 
-) : CanvasElement(x = x, y = y) {
+) : CanvasElement(x = x.toDouble(), y = y.toDouble()) {
 
 
-    var radius: Number = radius
+    var radius: Double = radius.toDouble()
         set(value) {
             field = value; updateGraphics()
         }

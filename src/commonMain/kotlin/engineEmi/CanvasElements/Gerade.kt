@@ -22,7 +22,7 @@ open class Gerade(
     var dicke: Number = 10,
     var fuellFarbe: RGBA = Colors.GREEN,
     var randFarbe: RGBA = Colors.GREEN
-) : CanvasElement(x = x, y = y) {
+) : CanvasElement(x = x.toDouble(), y = y.toDouble()) {
 
     var fillColor: RGBA = fuellFarbe
         set(value) {

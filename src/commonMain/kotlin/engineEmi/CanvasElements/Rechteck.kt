@@ -23,7 +23,7 @@ open class Rechteck(
     y: Number = 0.0,
     var fuellFarbe: RGBA = Colors.GREEN,
     var randFarbe: RGBA = Colors.RED
-) : CanvasElement(x = x, y = y) {
+) : CanvasElement(x = x.toDouble(), y = y.toDouble()) {
 
 
     var fillColor: RGBA = fuellFarbe

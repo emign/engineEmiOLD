@@ -17,7 +17,7 @@ open class Bild(
     y: Number = 100.0,
     var bildDatei: String,
     var skalierung: Float = 1.0f
-) : CanvasElement(x = x, y = y) {
+) : CanvasElement(x = x.toDouble(), y = y.toDouble()) {
 
 
     init {
