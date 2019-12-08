@@ -55,7 +55,7 @@ class Engine {
         views.clearColor = Colors.WHITE
         // Physik
         worldView {
-            position(400, 400).scale(10)
+            position(view.width / 2, view.height / 2).scale(10)
             // X: -20 bis +50
             // Y: -20 bis +20
 

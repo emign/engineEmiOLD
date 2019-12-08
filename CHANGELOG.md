@@ -1,5 +1,5 @@
-### x,y,radius werden nun korrekt als Double weiter gegeben (HEAD -> master)
->Sun, 8 Dec 2019 14:16:49 +0100
+### WorldView zentriert (HEAD -> master)
+>Sun, 8 Dec 2019 23:28:51 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
 
@@ -10,6 +10,17 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 ### x,y,radius werden nun korrekt als Double weiter gegeben (origin/master)
+>Sun, 8 Dec 2019 14:16:49 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### x,y,radius werden nun korrekt als Double weiter gegeben
 >Sun, 8 Dec 2019 13:58:21 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
