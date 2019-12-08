@@ -6,13 +6,13 @@ import com.soywiz.korge.view.sgraphics
 
 
 abstract class CanvasElement(
-    x: Number,
-    y: Number
+    x: Double,
+    y: Double
 ) : Container() {
 
     init {
-        super.x = x.toDouble()
-        super.y = y.toDouble()
+        super.x = x
+        super.y = y
     }
 
     /**

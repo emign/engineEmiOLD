@@ -34,7 +34,12 @@ class Rectangle(
     var strokeColor: RGBA = Colors.BLUE,
     var strokeThickness: Double = 0.0
 ) : Ebody(
-    x = x, y = y, density = density, friction = friction, restitution = restitution, bodyType = bodyType
+    x = x.toDouble(),
+    y = y.toDouble(),
+    density = density,
+    friction = friction,
+    restitution = restitution,
+    bodyType = bodyType
 ) {
 
     override val shape = BoxShape(width = width, height = height)

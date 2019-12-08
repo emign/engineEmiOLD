@@ -28,7 +28,12 @@ class Image(
     var scale: Float = 1f / 100f,
     val preInitializedBitmap: Bitmap? = null
 ) : Ebody(
-    x = x, y = y, density = density, friction = friction, restitution = restitution, bodyType = bodyType
+    x = x.toDouble(),
+    y = y.toDouble(),
+    density = density,
+    friction = friction,
+    restitution = restitution,
+    bodyType = bodyType
 ) {
     lateinit var image: Bitmap
     override var shape = BoxShape(width = width, height = height)

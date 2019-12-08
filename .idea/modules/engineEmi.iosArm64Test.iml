@@ -5,9 +5,9 @@
       <configuration version="3" platform="Native " allPlatforms="Native []" useProjectSettings="false" isTestModule="true" externalProjectId="engineEmi">
         <dependsOnModuleNames>engineEmi_commonTest</dependsOnModuleNames>
         <sourceSets>
-          <sourceSet>engineEmi.iosArm64Main</sourceSet>
           <sourceSet>engineEmi.commonTest</sourceSet>
           <sourceSet>engineEmi.commonMain</sourceSet>
+          <sourceSet>engineEmi.iosArm64Main</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <compilerSettings />

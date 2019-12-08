@@ -20,7 +20,14 @@ class Line(
     density: Float = 1f,
     friction: Float = 0.2f,
     restitution: Float = 0.0f
-) : Ebody(x = x, y = y, density = density, friction = friction, restitution = restitution, bodyType = bodyType) {
+) : Ebody(
+    x = x.toDouble(),
+    y = y.toDouble(),
+    density = density,
+    friction = friction,
+    restitution = restitution,
+    bodyType = bodyType
+) {
 
     override val shape = EdgeShape().apply {
         set(Vec2(x.toFloat(), y.toFloat()), Vec2(toX.toFloat(), toY.toFloat()))
