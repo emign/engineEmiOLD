@@ -1,4 +1,5 @@
 import com.soywiz.korev.Key
+import com.soywiz.korev.MouseButton
 import com.soywiz.korim.color.Colors
 import com.soywiz.korim.color.RGBA
 import engineEmi.CanvasElements.Kreis
@@ -24,6 +25,13 @@ class BeweglicherKreis(radius: Int = 50, x: Int = 100, y: Int = 100, fuellFarbe:
 
         x = Mouse.x
         y = Mouse.y
+
+
+        if (Mouse.isButtonDown(MouseButton.RIGHT))
+            radius = radius
+        if (Mouse.isButtonDown(MouseButton.BUTTON3))
+            radius = radius.toInt()++
+
 
     }
 }

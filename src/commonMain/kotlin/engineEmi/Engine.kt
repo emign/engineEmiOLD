@@ -1,7 +1,7 @@
 package engineEmi
 
 import com.soywiz.klock.milliseconds
-import com.soywiz.korev.KeyEvent
+import com.soywiz.korev.MouseEvent
 import com.soywiz.korev.addEventListener
 import com.soywiz.korev.keys
 import com.soywiz.korev.mouse
@@ -97,19 +97,18 @@ class Engine {
 
         }
 
+        addEventListener<MouseEvent> { Mouse.receiveEvent(it) }
 
-
-        addEventListener<KeyEvent> { }
 
         // INPUT
         keys {
-            onKeyDown { Keyboard.keyPressed(it.key) }
+            onKeyDown { Keyboard.keyDown(it.key) }
             onKeyUp { Keyboard.keyReleased(it.key) }
         }
 
         mouse {
-            onDown { }
-            onUp { }
+            onDown { Mouse.buttonDown() }
+            onUp { Mouse.buttonReleased() }
             onClick { }
             onMove { Mouse.movedTo(it.currentPos) }
         }
