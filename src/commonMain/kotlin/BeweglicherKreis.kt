@@ -19,18 +19,18 @@ class BeweglicherKreis(radius: Int = 50, x: Int = 100, y: Int = 100, fuellFarbe:
         if (Keyboard.isKeyDown(Key.RIGHT))
             x++
         if (Keyboard.isKeyDown(Key.SPACE))
-            radius = radius.toInt() + 1
+            radius = radius++
         if (Keyboard.isKeyDown(Key.X))
-            radius = radius.toInt() - 1
+            radius = radius++
 
         x = Mouse.x
         y = Mouse.y
 
 
         if (Mouse.isButtonDown(MouseButton.RIGHT))
-            radius = radius
+            radius++
         if (Mouse.isButtonDown(MouseButton.BUTTON3))
-            radius = radius.toInt()++
+            radius--
 
 
     }
