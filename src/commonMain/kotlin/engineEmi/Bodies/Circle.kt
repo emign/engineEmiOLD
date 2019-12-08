@@ -17,7 +17,7 @@ import org.jbox2d.dynamics.BodyType
  * @property strokeThickness Randdicke
  * @constructor
  */
-class Circle(
+open class Circle(
     x: Number = 0,
     y: Number = 0,
     var radius: Number = 0,

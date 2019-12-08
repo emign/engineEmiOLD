@@ -1,4 +1,26 @@
-### x,y werden nun korrekt als Double weiter gegeben (HEAD -> master)
+### x,y,radius werden nun korrekt als Double weiter gegeben (HEAD -> Inputs)
+>Sun, 8 Dec 2019 16:24:01 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### x,y,radius werden nun korrekt als Double weiter gegeben
+>Sun, 8 Dec 2019 14:01:48 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### x,y,radius werden nun korrekt als Double weiter gegeben
 >Sun, 8 Dec 2019 13:58:21 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -9,7 +31,61 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### Korge features entfernt, die nicht notwendig sind. Sollte Performance Optimierung mit sich bringen (origin/master)
+### Korge features entfernt, die nicht notwendig sind. Sollte Performance Optimierung mit sich bringen
+>Sun, 8 Dec 2019 13:55:33 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Keyboard Input hinzugefügt. Mouse Movement hinzugefügt
+>Sat, 7 Dec 2019 16:33:46 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Zwischewnstand
+>Fri, 6 Dec 2019 12:41:44 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+
+
+
+### x,y,radius werden nun korrekt als Double weiter gegeben
+>Sun, 8 Dec 2019 13:58:21 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### x,y werden nun korrekt als Double weiter gegeben
+>Sun, 8 Dec 2019 13:58:21 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Korge features entfernt, die nicht notwendig sind. Sollte Performance Optimierung mit sich bringen
 >Sat, 7 Dec 2019 16:34:51 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -50,7 +126,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### - Korge 1.4.2 support (auch build) - Added: MacOsNative target
+### - Korge 1.4.2 support (auch build) - Added: MacOsNative target (tag: 0.14)
 >Tue, 3 Dec 2019 09:57:01 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -107,7 +183,7 @@ Changed: Engine ist jetzt Objekt und kein Singleton mehr. (geänderter engine-St
 
 
 
-### Dokka gelöscht
+### Dokka gelöscht (tag: 0.13c)
 >Sat, 30 Nov 2019 15:04:52 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)

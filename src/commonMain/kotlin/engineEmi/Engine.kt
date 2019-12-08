@@ -8,7 +8,10 @@ import com.soywiz.korev.mouse
 import com.soywiz.korge.Korge
 import com.soywiz.korge.box2d.WorldView
 import com.soywiz.korge.box2d.worldView
-import com.soywiz.korge.input.*
+import com.soywiz.korge.input.Input
+import com.soywiz.korge.input.onDown
+import com.soywiz.korge.input.onKeyDown
+import com.soywiz.korge.input.onKeyUp
 import com.soywiz.korge.view.position
 import com.soywiz.korge.view.scale
 import com.soywiz.korgw.GameWindow
@@ -18,7 +21,6 @@ import com.soywiz.korio.async.launch
 import engineEmi.Bodies.Ebody
 import engineEmi.CanvasElements.CanvasElement
 import engineEmi.Input.Keyboard
-import engineEmi.Input.Mouse
 import engineEmi.Samples.HugeSample.HugeSample
 import kotlinx.coroutines.GlobalScope
 
@@ -66,6 +68,7 @@ class Engine {
         view.height = this.views.virtualHeight
         views.clearColor = Colors.WHITE
         // Physik
+
         worldView {
             position(400, 400).scale(10)
             // X: -20 bis +50
@@ -97,7 +100,8 @@ class Engine {
 
         }
 
-        addEventListener<MouseEvent> { Mouse.receiveEvent(it) }
+        addEventListener<MouseEvent> { canvasElements.onEach { element -> element.reachtToMouseEvent(it) } }
+        addEventListener<MouseEvent> { bodies.onEach { element -> element.reachtToMouseEvent(it) } }
 
 
         // INPUT
@@ -107,11 +111,10 @@ class Engine {
         }
 
         mouse {
-            onDown { Mouse.buttonDown() }
-            onUp { Mouse.buttonReleased() }
-            onClick { }
-            onMove { Mouse.movedTo(it.currentPos) }
+            onDown { }
         }
+
+
     }
 
 

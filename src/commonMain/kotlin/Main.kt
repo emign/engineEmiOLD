@@ -1,5 +1,6 @@
 import engineEmi.Bodies.Ebody
 import engineEmi.CanvasElements.CanvasElement
+import engineEmi.CircleTest
 import engineEmi.Engine
 
 
@@ -17,9 +18,9 @@ val engine = Engine()
 fun main() {
     engine.run {
 
-        val kreis = BeweglicherKreis()
+        val test = CircleTest()
+        engine.registerBody(test)
 
-        engine.registerCanvasElement(kreis)
         // HIER WIRD PROGRAMMIERT
 
     }
