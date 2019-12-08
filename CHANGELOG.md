@@ -1,4 +1,15 @@
-### Keyboard und Mouse-Input nun möglich (HEAD -> master)
+### engine.run() nimmt nun width und height als optionale Parameter um das GameWindow in der Größe anzupassen (HEAD -> master)
+>Sun, 8 Dec 2019 23:39:36 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Keyboard und Mouse-Input nun möglich (origin/master)
 >Sun, 8 Dec 2019 23:31:21 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -9,7 +20,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### WorldView zentriert (origin/master)
+### WorldView zentriert
 >Sun, 8 Dec 2019 23:28:51 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -20,7 +31,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### ReactToMousevent für bodies (origin/Inputs, Inputs)
+### ReactToMousevent für bodies
 >Sun, 8 Dec 2019 23:28:00 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -31,7 +42,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### x,y,radius werden nun korrekt als Double weiter gegeben (ü_arrays_sortierung)
+### x,y,radius werden nun korrekt als Double weiter gegeben
 >Sun, 8 Dec 2019 16:24:01 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -897,7 +908,7 @@ Changed: Engine ist jetzt Objekt und kein Singleton mehr. (geänderter engine-St
 
 
 
-### Einige Dateien und Ordner gelöscht, die nicht mehr gebraucht wurden (origin/dev, dev)
+### Einige Dateien und Ordner gelöscht, die nicht mehr gebraucht wurden
 >Fri, 29 Nov 2019 16:15:04 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -997,7 +1008,7 @@ Changed: Engine ist jetzt Objekt und kein Singleton mehr. (geänderter engine-St
 
 
 
-### ## Added - Property skalierung bei Bild hinzugefügt. Nun kann ein Bild einfach auf die korrekte Größe skaliert werden (0.5 -> 50%, ...) - `Image` Klasse bei den Bodies. Zeigt Bilder anstatt Geometrische Formen an. (devKorge140)
+### ## Added - Property skalierung bei Bild hinzugefügt. Nun kann ein Bild einfach auf die korrekte Größe skaliert werden (0.5 -> 50%, ...) - `Image` Klasse bei den Bodies. Zeigt Bilder anstatt Geometrische Formen an.
 >Mon, 25 Nov 2019 13:56:30 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -1071,7 +1082,7 @@ Changed: Engine ist jetzt Objekt und kein Singleton mehr. (geänderter engine-St
 
 
 
-### Readme update (tag: 0.01, testWithKorge)
+### Readme update (tag: 0.01)
 >Fri, 22 Nov 2019 17:06:26 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
