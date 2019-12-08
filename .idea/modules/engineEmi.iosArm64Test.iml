@@ -6,6 +6,7 @@
         <dependsOnModuleNames>engineEmi_commonTest</dependsOnModuleNames>
         <sourceSets>
           <sourceSet>engineEmi.commonTest</sourceSet>
+          <sourceSet>engineEmi.iosArm64Main</sourceSet>
           <sourceSet>engineEmi.commonMain</sourceSet>
           <sourceSet>engineEmi.iosArm64Main</sourceSet>
         </sourceSets>
