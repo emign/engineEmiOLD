@@ -7,6 +7,11 @@
 
 # Changelog
 
+## 0.15
+- engine.run() nimmt nun width und height als optionale Parameter um das GameWindow in der Größe anzupassen
+- Keyboard und Mouse-Input nun möglich
+- WorldView zentriert
+
 ## 0.14
 ### Added
 - Korge 1.4.2 Support

@@ -49,7 +49,13 @@ class Engine {
      * @param sample Lädt eine Beispielszene
      */
 
+    fun run(width: Int, height: Int) {
+
+    }
+
     fun run(
+        width: Int = 1280,
+        height: Int = 720,
         sample: Boolean = false,
         inputs: List<Input> = emptyList<Input>(),
         body: suspend () -> Unit
@@ -59,22 +65,23 @@ class Engine {
             nbody = HugeSample(this).invoke()
         }
         GlobalScope.launch {
-            main(nbody)
+            main(body = nbody, width = width, height = height)
         }
 
     }
 
-    suspend fun main(body: suspend () -> Unit) = Korge(quality = GameWindow.Quality.PERFORMANCE, title = "Engine Emi") {
-        body()
-        view.width = this.views.virtualWidth
-        view.height = this.views.virtualHeight
-        views.clearColor = Colors.WHITE
-        // Physik
+    suspend fun main(body: suspend () -> Unit, width: Int, height: Int) =
+        Korge(quality = GameWindow.Quality.PERFORMANCE, title = "Engine Emi", width = width, height = height) {
+            body()
+            view.width = this.views.virtualWidth
+            view.height = this.views.virtualHeight
+            views.clearColor = Colors.WHITE
+            // Physik
 
-        worldView {
-            position(view.width / 2, view.height / 2).scale(10)
-            // X: -20 bis +50
-            // Y: -20 bis +20
+            worldView {
+                position(view.width / 2, view.height / 2).scale(10)
+                // X: -20 bis +50
+                // Y: -20 bis +20
 
             if (!bodies.isEmpty()) {
 
