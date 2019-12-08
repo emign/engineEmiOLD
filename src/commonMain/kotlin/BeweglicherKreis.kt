@@ -28,7 +28,7 @@ class BeweglicherKreis(radius: Int = 50, x: Int = 100, y: Int = 100, fuellFarbe:
 
     }
 
-    override fun reachtToMouseEvent(event: MouseEvent) {
+    override fun reactToMouseEvent(event: MouseEvent) {
         if (event.type == MouseEvent.Type.DRAG) {
             if (event.button == MouseButton.BUTTON3) {
                 radius++

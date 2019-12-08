@@ -49,5 +49,5 @@ abstract class CanvasElement(
      */
     abstract fun updateGraphics()
 
-    override fun reachtToMouseEvent(event: MouseEvent) {}
+    override fun reactToMouseEvent(event: MouseEvent) {}
 }

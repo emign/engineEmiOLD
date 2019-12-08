@@ -35,7 +35,7 @@ object Keyboard {
 }
 
 interface MouseEventReacteable {
-    fun reachtToMouseEvent(event: MouseEvent)
+    fun reactToMouseEvent(event: MouseEvent)
 }
 
 
