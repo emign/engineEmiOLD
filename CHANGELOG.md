@@ -1,4 +1,15 @@
-### Inputsample hinzugefügt und besseres Sample-Management (HEAD -> master)
+### Inputsample hinzugefügt und besseres Sample-Management (HEAD -> beneTest)
+>Mon, 9 Dec 2019 13:08:20 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Inputsample hinzugefügt und besseres Sample-Management (origin/master, master)
 >Mon, 9 Dec 2019 10:56:50 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -9,7 +20,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### Gitignore update (origin/master, addInputSample)
+### Gitignore update (addInputSample)
 >Mon, 9 Dec 2019 10:17:56 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)

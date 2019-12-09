@@ -9,7 +9,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("com.soywiz.korlibs.korge.plugins:korge-gradle-plugin:1.4.2")
+        classpath("com.soywiz.korlibs.korge.plugins:korge-gradle-plugin:1.4.3b")
         classpath("org.jetbrains.dokka:dokka-gradle-plugin:0.10.0")
 
     }
@@ -18,10 +18,6 @@ buildscript {
 
 apply(plugin = "korge")
 apply(plugin = "org.jetbrains.dokka")
-
-repositories {
-    mavenCentral()
-}
 
 korge {
     id = "me.emig.engineEmi"
