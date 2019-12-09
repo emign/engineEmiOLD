@@ -6,6 +6,9 @@
 
 
 # Changelog
+## 0.16
+- Audio Support in Klasse Audio (Noch clunky bis nächste Korge Version)
+- Inputsample hinzugefügt und besseres Sample-Management
 
 ## 0.15
 - engine.run() nimmt nun width und height als optionale Parameter um das GameWindow in der Größe anzupassen
