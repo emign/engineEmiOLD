@@ -1,4 +1,15 @@
-### CircleTest gelöscht (HEAD -> master)
+### Gitignore update (HEAD -> master)
+>Mon, 9 Dec 2019 10:17:56 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### CircleTest gelöscht (origin/master, TestNewKorge)
 >Mon, 9 Dec 2019 08:15:26 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
