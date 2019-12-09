@@ -1,4 +1,15 @@
 ### BubbleSort und SelectionSort (HEAD -> uebueng_array_sortieren)
+>Mon, 9 Dec 2019 10:16:34 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### BubbleSort und SelectionSort (origin/uebueng_array_sortieren)
 >Mon, 9 Dec 2019 09:15:42 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -9,7 +20,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### CircleTest gelöscht (origin/master, master)
+### CircleTest gelöscht (origin/master, master, TestNewKorge)
 >Mon, 9 Dec 2019 08:15:26 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
