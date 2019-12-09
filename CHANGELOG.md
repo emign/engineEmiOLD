@@ -1,4 +1,15 @@
-### Inputsample hinzugefügt und besseres Sample-Management (HEAD -> master)
+### Audio Support in Klasse Audio (Noch clunky bis nächste Korge Version) (HEAD -> master)
+>Mon, 9 Dec 2019 20:24:13 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Inputsample hinzugefügt und besseres Sample-Management (origin/master)
 >Mon, 9 Dec 2019 10:56:50 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -9,7 +20,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### Gitignore update (origin/master, addInputSample)
+### Gitignore update (addInputSample)
 >Mon, 9 Dec 2019 10:17:56 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -195,7 +206,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### Resources Directory umstrukturiert (musicAndSound)
+### Resources Directory umstrukturiert
 >Thu, 5 Dec 2019 08:01:03 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
