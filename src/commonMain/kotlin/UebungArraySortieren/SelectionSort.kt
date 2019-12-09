@@ -1,0 +1,21 @@
+package UebungArraySortieren
+
+import engineEmi.CanvasElements.Rechteck
+import kotlinx.coroutines.delay
+
+object SelectionSort : Sortieralgorithmus() {
+    override suspend fun sortieren(array: Array<Rechteck>) {
+        for (i in array.indices) {
+            var min = i
+            for (j in i + 1 until array.size) {
+                if (array[j].hoehe.toInt() < array[min].hoehe.toInt()) {
+                    min = j
+                }
+            }
+            array.tauscheIndexPositionen(min, i)
+            ArrayController.positionenAktualisieren()
+            delay(100)
+
+        }
+    }
+}

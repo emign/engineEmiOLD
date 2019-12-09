@@ -1,4 +1,15 @@
-### CircleTest gelöscht (HEAD -> master)
+### BubbleSort und SelectionSort (HEAD -> uebueng_array_sortieren)
+>Mon, 9 Dec 2019 09:15:42 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### CircleTest gelöscht (origin/master, master)
 >Mon, 9 Dec 2019 08:15:26 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)

@@ -1,3 +1,5 @@
+import UebungArraySortieren.ArrayController
+import UebungArraySortieren.BubbleSort
 import engineEmi.Bodies.Ebody
 import engineEmi.CanvasElements.CanvasElement
 import engineEmi.Engine
@@ -15,9 +17,13 @@ val engine = Engine()
  * Wir der Parameter sample auf true gesetzt, wird eine Funktionsdemo automatisch geladen
  */
 fun main() {
-    engine.run {
+    engine.run(width = 510, height = 300) {
 
         // HIER WIRD PROGRAMMIERT
+        ArrayController.engine = engine
+        ArrayController.arrayErzeugen(100)
+        ArrayController.sortieralgorithmus = BubbleSort
+        ArrayController.sortieren()
 
     }
 }
