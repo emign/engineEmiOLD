@@ -1,7 +1,10 @@
 package engineEmi.Samples
 
 import com.soywiz.korim.color.Colors
+import com.soywiz.korim.format.readBitmap
+import com.soywiz.korio.file.std.resourcesVfs
 import engineEmi.Bodies.Circle
+import engineEmi.Bodies.Image
 import engineEmi.Bodies.Rectangle
 import engineEmi.CanvasElements.Gerade
 import engineEmi.Engine
@@ -54,7 +57,7 @@ object HugeSample {
         //val boden3 = Rectangle(x = 0, y = -20, width = 100, height = 1, density = 1f, angle = 0.5f, fillColor = Colors.LIGHTCORAL, bodyType = BodyType.KINEMATIC)
 
 
-        //val image = resourcesVfs["hut.png"].readBitmap()
+        val image = resourcesVfs["hut.png"].readBitmap()
 
         repeat(100) {
             engine.registerBody(
@@ -80,7 +83,16 @@ object HugeSample {
                 )
             )
             //   Engine.registerBody(Line((-50..50).random(), (-50..50).random(), (-50..50).random(), (-50..50).random(), BodyType.STATIC, Colors.LIGHTCORAL, 2))
-            // Engine.registerBody(Image(x = (-50..50).random(), y = (30..50).random(), bodyType = BodyType.DYNAMIC, density = 0.5f, friction = 0.3f, preInitializedBitmap = image))
+            engine.registerBody(
+                Image(
+                    x = (-50..50).random(),
+                    y = (30..50).random(),
+                    bodyType = BodyType.DYNAMIC,
+                    density = 0.5f,
+                    friction = 0.3f,
+                    preInitializedBitmap = image
+                )
+            )
         }
 
 

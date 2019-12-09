@@ -12,7 +12,7 @@ import com.soywiz.korim.format.readBitmap
 import com.soywiz.korio.file.std.resourcesVfs
 import org.jbox2d.dynamics.BodyType
 
-class Image(
+open class Image(
     x: Number = 0,
     y: Number = 0,
     bodyType: BodyType = BodyType.STATIC,

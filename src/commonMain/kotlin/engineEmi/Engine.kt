@@ -25,6 +25,7 @@ import engineEmi.CanvasElements.CanvasElement
 import engineEmi.Input.Keyboard
 import engineEmi.Samples.HugeSample
 import engineEmi.Samples.InputSample.InputSample
+import engineEmi.Samples.PhysikSample.PhysikSample
 import engineEmi.Samples.Samples
 import kotlinx.coroutines.GlobalScope
 
@@ -56,22 +57,27 @@ class Engine {
         height: Int = 720,
         sample: Samples = Samples.NONE,
         inputs: List<Input> = emptyList<Input>(),
-        body: suspend () -> Unit
+        body: suspend () -> Unit = {},
+        afterSetup: suspend () -> Unit = {}
     ) {
         var nbody = body
+        var afterSetup = afterSetup
         when (sample) {
             Samples.HUGE -> nbody = HugeSample.invoke(this)
             Samples.INPUT -> nbody = InputSample.invoke(this)
+            Samples.PHYSIK -> {
+                nbody = PhysikSample.invoke(this); afterSetup = PhysikSample.afterSetup(this)
+            }
             Samples.NONE -> {
             }
         }
         GlobalScope.launch {
-            main(body = nbody, width = width, height = height)
+            main(body = nbody, afterSetup = afterSetup, width = width, height = height)
         }
 
     }
 
-    suspend fun main(body: suspend () -> Unit, width: Int, height: Int) =
+    suspend fun main(body: suspend () -> Unit, afterSetup: suspend () -> Unit, width: Int, height: Int) =
         Korge(quality = GameWindow.Quality.PERFORMANCE, title = "Engine Emi", width = width, height = height) {
             body()
             view.width = this.views.virtualWidth
@@ -80,20 +86,21 @@ class Engine {
             // Physik
 
             worldView {
+
+
                 position(view.width / 2, view.height / 2).scale(10)
                 // X: -20 bis +50
                 // Y: -20 bis +20
 
-            if (!bodies.isEmpty()) {
+                if (!bodies.isEmpty()) {
 
-                bodies.run {
-                    map { registerBodyWithWorld(it) }
-                    map { it.body }
+                    bodies.run {
+                        map { registerBodyWithWorld(it) }
+                        map { it.body }
+                    }
                 }
             }
-
-
-        }
+            afterSetup()
 
         //Physikfreie Zone
         if (!canvasElements.isEmpty()) {

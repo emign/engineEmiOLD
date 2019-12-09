@@ -20,7 +20,7 @@ import org.jbox2d.dynamics.BodyType
  * @property strokeThickness Randbreite
  * @constructor
  */
-class Rectangle(
+open class Rectangle(
     x: Number = 0,
     y: Number = 0,
     var width: Number = 0,

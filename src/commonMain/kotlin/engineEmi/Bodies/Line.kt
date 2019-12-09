@@ -9,7 +9,7 @@ import org.jbox2d.collision.shapes.EdgeShape
 import org.jbox2d.common.Vec2
 import org.jbox2d.dynamics.BodyType
 
-class Line(
+open class Line(
     x: Number = 0,
     y: Number = 0,
     var toX: Number = 0,
