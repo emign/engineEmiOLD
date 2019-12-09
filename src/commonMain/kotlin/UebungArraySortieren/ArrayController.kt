@@ -46,8 +46,6 @@ object ArrayController {
             println(array.map { it.hoehe }.toList())
             positionenAktualisieren()
         }
-
-
     }
 
     fun positionenAktualisieren() {
@@ -56,7 +54,6 @@ object ArrayController {
         }
 
     }
-
 }
 
 fun <T> Array<T>.tauscheIndexPositionen(l: Int, r: Int) {
