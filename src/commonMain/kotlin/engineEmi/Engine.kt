@@ -23,7 +23,9 @@ import com.soywiz.korma.geom.Point
 import engineEmi.Bodies.Ebody
 import engineEmi.CanvasElements.CanvasElement
 import engineEmi.Input.Keyboard
-import engineEmi.Samples.HugeSample.HugeSample
+import engineEmi.Samples.HugeSample
+import engineEmi.Samples.InputSample.InputSample
+import engineEmi.Samples.Samples
 import kotlinx.coroutines.GlobalScope
 
 /**
@@ -49,20 +51,19 @@ class Engine {
      * @param sample Lädt eine Beispielszene
      */
 
-    fun run(width: Int, height: Int) {
-
-    }
-
     fun run(
         width: Int = 1280,
         height: Int = 720,
-        sample: Boolean = false,
+        sample: Samples = Samples.NONE,
         inputs: List<Input> = emptyList<Input>(),
         body: suspend () -> Unit
     ) {
         var nbody = body
-        if (sample) {
-            nbody = HugeSample(this).invoke()
+        when (sample) {
+            Samples.HUGE -> nbody = HugeSample.invoke(this)
+            Samples.INPUT -> nbody = InputSample.invoke(this)
+            Samples.NONE -> {
+            }
         }
         GlobalScope.launch {
             main(body = nbody, width = width, height = height)

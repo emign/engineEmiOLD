@@ -1,4 +1,4 @@
-package engineEmi.Samples.HugeSample
+package engineEmi.Samples
 
 import com.soywiz.korim.color.Colors
 import engineEmi.Bodies.Circle
@@ -7,9 +7,9 @@ import engineEmi.CanvasElements.Gerade
 import engineEmi.Engine
 import org.jbox2d.dynamics.BodyType
 
-class HugeSample(var engine: Engine) {
+object HugeSample {
 
-    fun invoke(): suspend () -> Unit = {
+    fun invoke(engine: Engine): suspend () -> Unit = {
         //val meinRechteck = Rechteck(höhe = 100.0, breite = 100.0, x = 100.0, y = 100.0, fuellFarbe = Colors.LAWNGREEN)
         //val meineGerade =
         Gerade(x = 10.0, y = 10.0, toX = 100.0, toY = 180.0, dicke = 3, fuellFarbe = Colors.BLUEVIOLET)

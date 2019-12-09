@@ -1,4 +1,15 @@
-### Gitignore update (HEAD -> master)
+### Inputsample hinzugefügt und besseres Sample-Management (HEAD -> master)
+>Mon, 9 Dec 2019 10:56:50 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Gitignore update (origin/master, addInputSample)
 >Mon, 9 Dec 2019 10:17:56 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -9,7 +20,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### CircleTest gelöscht (origin/master, TestNewKorge)
+### CircleTest gelöscht (TestNewKorge)
 >Mon, 9 Dec 2019 08:15:26 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
