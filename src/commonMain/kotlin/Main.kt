@@ -1,4 +1,3 @@
-import engineEmi.Audio.Audio
 import engineEmi.Bodies.Ebody
 import engineEmi.CanvasElements.CanvasElement
 import engineEmi.Engine
@@ -21,7 +20,7 @@ fun main() {
     engine.run {
 
         // HIER WIRD PROGRAMMIERT
-        val playMusic = Audio("audio/music/Jahzzar_-_05_-_Siesta.mp3").play()
+
 
     }
 }
