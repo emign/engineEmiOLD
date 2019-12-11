@@ -6,6 +6,21 @@
 
 
 # Changelog
+
+## 0.17
+
+### Added
+- Korge 1.4.3c support. openLocalJNA target funktioniert nun korrekt (lädt deutlich schneller als openLocal und ist insgesamt deutlich performanter)
+
+### Fixed
+- Concurrency error bei schnellen Änderungen von Views
+
+### Known bugs
+- Einige Targets (darunter openLocalJNA) können bei manchen Systemen falsche Anzeige-Proportionen aufweisen (etwa Anzeige nur auf halbe Höhe und Breite skaliert)
+
+### Deprecated
+- openLocal target -> switch to openLocalJNA
+
 ## 0.16
 - Audio Support in Klasse Audio (Noch clunky bis nächste Korge Version)
 - Inputsample hinzugefügt und besseres Sample-Management
