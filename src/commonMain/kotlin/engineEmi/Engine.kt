@@ -12,6 +12,8 @@ import com.soywiz.korge.input.Input
 import com.soywiz.korge.input.onDown
 import com.soywiz.korge.input.onKeyDown
 import com.soywiz.korge.input.onKeyUp
+import com.soywiz.korge.view.position
+import com.soywiz.korge.view.scale
 import com.soywiz.korgw.GameWindow
 import com.soywiz.korim.color.Colors
 import com.soywiz.korio.async.delay
@@ -84,7 +86,7 @@ class Engine {
             worldView {
 
 
-                // position(view.width / 2, view.height / 2).scale(10)
+                position(view.width / 2, view.height / 2).scale(10)
 
                 // X: -20 bis +50
                 // Y: -20 bis +20

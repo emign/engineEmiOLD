@@ -1,3 +1,14 @@
+### Korge 1.4.3c (HEAD -> master)
+>Wed, 11 Dec 2019 10:49:32 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
 ### Korge 1.4.3c
 >Wed, 11 Dec 2019 10:11:52 +0100
 
@@ -9,7 +20,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### Korge 1.4.3c (origin/master)
+### Korge 1.4.3c
 >Wed, 11 Dec 2019 10:11:52 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)

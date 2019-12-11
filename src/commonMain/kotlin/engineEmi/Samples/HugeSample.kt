@@ -57,7 +57,7 @@ object HugeSample {
         //val boden3 = Rectangle(x = 0, y = -20, width = 100, height = 1, density = 1f, angle = 0.5f, fillColor = Colors.LIGHTCORAL, bodyType = BodyType.KINEMATIC)
 
 
-        val image = resourcesVfs["hut.png"].readBitmap()
+        val image = resourcesVfs["gfx/hut.png"].readBitmap()
 
         repeat(100) {
             engine.registerBody(

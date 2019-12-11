@@ -3,7 +3,6 @@ package engineEmi.Bodies
 import com.soywiz.korge.box2d.BoxShape
 import com.soywiz.korge.box2d.setView
 import com.soywiz.korge.box2d.view
-import com.soywiz.korge.input.onOver
 import com.soywiz.korge.view.*
 import com.soywiz.korim.bitmap.Bitmap
 import com.soywiz.korim.color.Colors
@@ -62,11 +61,9 @@ open class Image(
         view = Graphics(autoScaling = true).image(image) {
             position(x, y)
         }.scale(scale).anchor(.5, .5)
-        view.apply {
-            onOver {
-                //writeInfo()
-            }
-        }
+
+
+        //view = Container().apply { image(image).position(x, y).scale(scale).anchor(.5, .5) }
     }
 
     fun writeInfo() {

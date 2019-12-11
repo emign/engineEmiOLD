@@ -1,6 +1,7 @@
 import engineEmi.Bodies.Ebody
 import engineEmi.CanvasElements.CanvasElement
 import engineEmi.Engine
+import engineEmi.Samples.Samples
 
 
 /**
@@ -17,7 +18,7 @@ val engine = Engine()
  * Zum Beispiel: engine.run(sample = Samples.INPUT)
  */
 fun main() {
-    engine.run {
+    engine.run(sample = Samples.HUGE) {
 
         // HIER WIRD PROGRAMMIERT
 
