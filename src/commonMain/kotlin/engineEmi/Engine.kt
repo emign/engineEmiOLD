@@ -8,10 +8,7 @@ import com.soywiz.korev.mouse
 import com.soywiz.korge.Korge
 import com.soywiz.korge.box2d.WorldView
 import com.soywiz.korge.box2d.worldView
-import com.soywiz.korge.input.Input
-import com.soywiz.korge.input.onDown
-import com.soywiz.korge.input.onKeyDown
-import com.soywiz.korge.input.onKeyUp
+import com.soywiz.korge.input.*
 import com.soywiz.korge.view.position
 import com.soywiz.korge.view.scale
 import com.soywiz.korgw.GameWindow
@@ -84,7 +81,7 @@ class Engine {
             views.clearColor = Colors.WHITE
             // Physik
 
-            worldView {
+            val wv = worldView {
 
 
                 position(view.width / 2, view.height / 2).scale(scale)
@@ -129,6 +126,7 @@ class Engine {
 
         mouse {
             onDown { }
+            onMove { }
         }
 
 

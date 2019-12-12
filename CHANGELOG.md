@@ -1,4 +1,15 @@
-### Scale standard auf 100 inkl. Hotfix für Image Scaling Faktor 10 (HEAD -> NewScaling)
+### Scale standard auf 100 inkl. Hotfix für Image Scaling Faktor 10 (HEAD -> ConvertPixelToWorld)
+>Fri, 13 Dec 2019 00:02:20 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Scale standard auf 100 inkl. Hotfix für Image Scaling Faktor 10 (origin/dev, dev)
 >Thu, 12 Dec 2019 22:51:41 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
