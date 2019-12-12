@@ -1,4 +1,15 @@
-### openLocalJVM entfernt (HEAD -> NewScaling)
+### Scale als Parameter in main und run methode eingefügt (HEAD -> NewScaling)
+>Thu, 12 Dec 2019 22:50:01 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### openLocalJVM entfernt
 >Thu, 12 Dec 2019 22:46:01 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)

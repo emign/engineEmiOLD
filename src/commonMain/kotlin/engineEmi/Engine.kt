@@ -55,8 +55,9 @@ class Engine {
         height: Int = 720,
         sample: Samples = Samples.NONE,
         inputs: List<Input> = emptyList<Input>(),
-        body: suspend () -> Unit = {},
-        afterSetup: suspend () -> Unit = {}
+        afterSetup: suspend () -> Unit = {},
+        scale: Int = 10,
+        body: suspend () -> Unit = {}
     ) {
         var nbody = body
         var afterSetup = afterSetup
@@ -70,12 +71,12 @@ class Engine {
             }
         }
         GlobalScope.launch {
-            main(body = nbody, afterSetup = afterSetup, width = width, height = height)
+            main(body = nbody, afterSetup = afterSetup, width = width, height = height, scale = scale)
         }
 
     }
 
-    suspend fun main(body: suspend () -> Unit, afterSetup: suspend () -> Unit, width: Int, height: Int) =
+    suspend fun main(body: suspend () -> Unit, afterSetup: suspend () -> Unit, width: Int, height: Int, scale: Int) =
         Korge(quality = GameWindow.Quality.PERFORMANCE, title = "Engine Emi", width = width, height = height) {
             body()
             view.width = this.views.virtualWidth
@@ -86,7 +87,7 @@ class Engine {
             worldView {
 
 
-                position(view.width / 2, view.height / 2).scale(10)
+                position(view.width / 2, view.height / 2).scale(scale)
 
                 // X: -20 bis +50
                 // Y: -20 bis +20
