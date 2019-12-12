@@ -56,7 +56,7 @@ class Engine {
         sample: Samples = Samples.NONE,
         inputs: List<Input> = emptyList<Input>(),
         afterSetup: suspend () -> Unit = {},
-        scale: Int = 10,
+        scale: Int = 100,
         body: suspend () -> Unit = {}
     ) {
         var nbody = body

@@ -65,7 +65,6 @@ open class Circle(
                     circle(x, y, radius)
                 }
             }
-
         }
     }
 

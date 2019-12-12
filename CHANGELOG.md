@@ -1,4 +1,15 @@
-### Scale als Parameter in main und run methode eingefügt (HEAD -> NewScaling)
+### Scale standard auf 100 inkl. Hotfix für Image Scaling Faktor 10 (HEAD -> NewScaling)
+>Thu, 12 Dec 2019 22:51:41 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Scale als Parameter in main und run methode eingefügt
 >Thu, 12 Dec 2019 22:50:01 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)

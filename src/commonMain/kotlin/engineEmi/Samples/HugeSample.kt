@@ -38,17 +38,17 @@ object HugeSample {
         val boden = Rectangle(
             x = -0,
             y = 0,
-            width = 10,
-            height = 10,
+            width = 1,
+            height = 1,
             density = 1f,
             fillColor = Colors.BLUE,
             bodyType = BodyType.KINEMATIC
         )
         val boden2 = Rectangle(
-            x = 30,
+            x = 3,
             y = 0,
-            width = 10,
-            height = 10,
+            width = 1,
+            height = 1,
             density = 1f,
             angle = 45f,
             fillColor = Colors.RED,
@@ -62,11 +62,11 @@ object HugeSample {
         repeat(100) {
             engine.registerBody(
                 Rectangle(
-                    (-50..50).random(),
-                    (30..50).random(),
+                    (-5..5).random(),
+                    (3..5).random(),
                     restitution = 0.8f,
-                    width = 2,
-                    height = 2,
+                    width = 0.2,
+                    height = 0.2,
                     density = ((0..100).random().toFloat() / (1..10).random().toFloat()),
                     fillColor = Colors.GREEN,
                     bodyType = BodyType.DYNAMIC
@@ -74,9 +74,9 @@ object HugeSample {
             )
             engine.registerBody(
                 Circle(
-                    (-50..50).random(),
-                    (30..50).random(),
-                    1,
+                    (-5..5).random(),
+                    (3..5).random(),
+                    0.1,
                     bodyType = BodyType.DYNAMIC,
                     fillColor = Colors.PINK,
                     density = 0.5f
@@ -85,8 +85,8 @@ object HugeSample {
             //   Engine.registerBody(Line((-50..50).random(), (-50..50).random(), (-50..50).random(), (-50..50).random(), BodyType.STATIC, Colors.LIGHTCORAL, 2))
             engine.registerBody(
                 Image(
-                    x = (-50..50).random(),
-                    y = (30..50).random(),
+                    x = (-5..5).random(),
+                    y = (3..5).random(),
                     bodyType = BodyType.DYNAMIC,
                     density = 0.5f,
                     friction = 0.3f,

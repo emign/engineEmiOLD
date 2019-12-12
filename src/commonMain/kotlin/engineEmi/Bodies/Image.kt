@@ -3,7 +3,8 @@ package engineEmi.Bodies
 import com.soywiz.korge.box2d.BoxShape
 import com.soywiz.korge.box2d.setView
 import com.soywiz.korge.box2d.view
-import com.soywiz.korge.view.*
+import com.soywiz.korge.view.Image
+import com.soywiz.korge.view.scale
 import com.soywiz.korim.bitmap.Bitmap
 import com.soywiz.korim.color.Colors
 import com.soywiz.korim.color.RGBA
@@ -44,8 +45,8 @@ open class Image(
 
     override suspend fun initBody() {
         image = preInitializedBitmap ?: resourcesVfs[imageFile].readBitmap()
-        width = image.width * scale
-        height = image.height * scale
+        width = image.width * scale / 10
+        height = image.height * scale / 10
         shape = BoxShape(width = width, height = height)
         body = world.createBody(bd)
         fixture.density = density
@@ -58,10 +59,11 @@ open class Image(
     }
 
     override suspend fun createView() {
-        view = Graphics(autoScaling = true).image(image) {
-            position(x, y)
-        }.scale(scale).anchor(.5, .5)
-
+        /*   view = Graphics(autoScaling = true).image(image) {
+               position(x, y)
+           }.scale(scale).anchor(.5, .5)*/
+        view = Image(image, .5, .5).scale(scale / 10)
+        println(scale)
 
         //view = Container().apply { image(image).position(x, y).scale(scale).anchor(.5, .5) }
     }
