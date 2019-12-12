@@ -40,12 +40,7 @@ tasks.register<DefaultTask>("openInBrowser") {
     dependsOn("jsWebRun")
 }
 
-tasks.register<DefaultTask>("openLocalJNA") {
-    group = "engineemi"
-    dependsOn("runJvmFirstThread")
-}
-
 tasks.register<DefaultTask>("openLocal") {
     group = "engineemi"
-    dependsOn("runJvm")
+    dependsOn("runJvmFirstThread")
 }
