@@ -3,17 +3,16 @@ import com.soywiz.korge.gradle.korge
 buildscript {
     repositories {
         jcenter()
-        mavenLocal()
-        maven { url = uri("https://dl.bintray.com/korlibs/korlibs") }
-        maven { url = uri("https://plugins.gradle.org/m2/") }
         mavenCentral()
+        maven { url = uri("http://dl.bintray.com/korlibs/korlibs/") }
+        maven { url = uri("https://plugins.gradle.org/m2/") }
     }
     dependencies {
-        classpath("com.soywiz.korlibs.korge.plugins:korge-gradle-plugin:1.4.3c")
+        classpath("com.soywiz.korlibs.korge.plugins:korge-gradle-plugin:1.5.0d")
         classpath("org.jetbrains.dokka:dokka-gradle-plugin:0.10.0")
-
     }
 }
+
 
 apply(plugin = "korge")
 apply(plugin = "org.jetbrains.dokka")
