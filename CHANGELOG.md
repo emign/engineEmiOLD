@@ -1,4 +1,15 @@
-### Check (HEAD -> dev)
+### Gradle muss noch mit Tasks für Samples versehen werden REadme angepasst Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de> (HEAD -> dev)
+>Fri, 13 Dec 2019 11:02:35 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Check
 >Fri, 13 Dec 2019 10:36:09 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -9,7 +20,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### Scale standard auf 100 inkl. Hotfix für Image Scaling Faktor 10 (origin/dev)
+### Scale standard auf 100 inkl. Hotfix für Image Scaling Faktor 10
 >Thu, 12 Dec 2019 22:51:41 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)

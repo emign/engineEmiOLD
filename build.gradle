@@ -1,25 +1,19 @@
-import com.soywiz.korge.gradle.korge
-
 buildscript {
     repositories {
-        jcenter()
-        mavenCentral()
-        maven { url = uri("http://dl.bintray.com/korlibs/korlibs/") }
+        mavenLocal()
+        maven { url = uri("https://dl.bintray.com/korlibs/korlibs") }
         maven { url = uri("https://plugins.gradle.org/m2/") }
+        mavenCentral()
     }
     dependencies {
-        classpath("com.soywiz.korlibs.korge.plugins:korge-gradle-plugin:1.5.0d")
+        classpath("com.soywiz.korlibs.korge.plugins:korge-gradle-plugin:$korgePluginVersion")
         classpath("org.jetbrains.dokka:dokka-gradle-plugin:0.10.0")
     }
 }
 
-
-apply(plugin = "korge")
-apply(plugin = "org.jetbrains.dokka")
-
-repositories {
-    mavenCentral()
-}
+apply plugin : "korge"
+apply plugin : "org.jetbrains.dokka"
+apply plugin : "application"
 
 korge {
     id = "me.emig.engineEmi"
@@ -29,18 +23,17 @@ korge {
     supportBox2d()
 }
 
-
-tasks.register<org.jetbrains.dokka.gradle.DokkaTask>("createDokkaDocs") {
+dokka {
     outputFormat = "html"
     outputDirectory = "dokka"
 }
 
-tasks.register<DefaultTask>("openInBrowser") {
+tasks.register("openInBrowser") {
     group = "engineemi"
     dependsOn("jsWebRun")
 }
 
-tasks.register<DefaultTask>("openLocal") {
+tasks.register("openLocal") {
     group = "engineemi"
     dependsOn("runJvmFirstThread")
 }

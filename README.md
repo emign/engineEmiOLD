@@ -7,6 +7,25 @@
 
 # Changelog
 
+## 0.18 2019-12-14 
+
+### Wichtig
+Die `Main.kt` sieht nun deutlich verändert aus. Es gibt 3 Funktionen, in welchen programmiert werden kann/soll.
+Die genauen Aufgaben der 3 Funktionen sind im Quelltext erläutert.
+
+### Added
+- Korge 1.5.0d support
+- PhysikSample integriert (physikdemo)
+- Scale als Parameter in main und run methode eingefügt
+- Scale standard auf 100 inkl. Hotfix für Image Scaling Faktor 10
+
+### Changed
+- Gradle auf Groovy geändert (build.gradle anstatt build.gradle.kts), da es schneller ist
+- Aufbau `Main.kt` geändert, als Vorbereitung für Physik-Projekte
+
+### Removed
+- openLocalJVM entfernt
+
 ## 0.17
 
 ### Added
