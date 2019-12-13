@@ -1,22 +1,4 @@
-/*
-package engineEmi.Samples.InputSample
-
-import com.soywiz.korev.Key
-import com.soywiz.korev.MouseEvent
-import com.soywiz.korim.color.Colors
-import com.soywiz.korim.color.RGBA
-import engineEmi.CanvasElements.Kreis
-import engineEmi.Engine
-import engineEmi.Input.Keyboard
-
-object InputSample {
-    fun invoke(engine: Engine): suspend () -> Unit = {
-
-    }
-}
-
-
-*/
+package engineEmi.Samples.`sample-Input`
 
 import com.soywiz.korev.Key
 import com.soywiz.korev.MouseEvent
@@ -44,7 +26,7 @@ object InputSample {
      * viewWillLoad: Dieser Code-Block wird NACH der Konfiguration aber VOR dem Aufbau des Views (der Anzeige) ausgeführt. Hier sollte man
      * seine Objekte bei der Engine registrieren
      * viewDidLoad: Dieser Code-Block wird NACH dem der View komplett aufgebaut wurde ausgeführt. Hier sollte man Code platzieren, der darauf
-     * angewiesen ist, dass Objekte bereits fertig erstellt und registriert wurden. Dies trifft vor allem auf [EBody] Objekte zu.
+     * angewiesen ist, dass Objekte bereits fertig erstellt und registriert wurden. Dies trifft vor allem auf [Ebody] Objekte zu.
      */
     fun main() = runBlockingNoSuspensions {
         engine.run {
@@ -71,7 +53,6 @@ object InputSample {
 
             start()
         }
-
     }
 }
 

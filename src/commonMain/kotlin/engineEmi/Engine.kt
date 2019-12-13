@@ -20,7 +20,6 @@ import com.soywiz.korio.async.launch
 import engineEmi.Bodies.Ebody
 import engineEmi.CanvasElements.CanvasElement
 import engineEmi.Input.Keyboard
-import engineEmi.Samples.Samples
 
 /**
  * Die Game-Engine. Sie ist ein Singleton und wird mit [Engine.run] gestartet.
@@ -32,20 +31,17 @@ class Engine {
     var canvasElements = mutableListOf<CanvasElement>()
     var bodies = mutableListOf<Ebody>()
     var view = ViewWindow()
-    var viewWillLoadBody: () -> Unit = {}
-    var viewDidLoadBody: () -> Unit = {}
+    var viewWillLoadBody: suspend () -> Unit = {}
+    var viewDidLoadBody: suspend () -> Unit = {}
 
-    suspend fun init(initBody: () -> Unit) = this.apply {
+    fun init(initBody: () -> Unit) = this.apply {
         view.width = 1280
         view.height = 720
         view.scale = 100
         initBody()
     }
 
-    suspend fun start(
-        sample: Samples = Samples.NONE,
-        initBody: () -> Unit = {}
-    ) =
+    suspend fun start() =
         Korge(
             quality = GameWindow.Quality.PERFORMANCE,
             title = "Engine Emi",
@@ -81,7 +77,6 @@ class Engine {
                         delay(16.milliseconds)
                     }
                 }
-
             }
 
 
@@ -100,11 +95,11 @@ class Engine {
             viewDidLoadBody()
         }
 
-    suspend fun viewWillLoad(viewWillLoadBody: () -> Unit = {}) {
+    fun viewWillLoad(viewWillLoadBody: suspend () -> Unit = {}) {
         this.viewWillLoadBody = viewWillLoadBody
     }
 
-    suspend fun viewDidLoad(viewDidLoadBody: () -> Unit = {}) {
+    fun viewDidLoad(viewDidLoadBody: suspend () -> Unit = {}) {
         this.viewDidLoadBody = viewDidLoadBody
     }
 
