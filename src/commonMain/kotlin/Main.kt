@@ -1,7 +1,10 @@
+import com.soywiz.korim.color.Colors
+import com.soywiz.korio.async.runBlockingNoSuspensions
+import engineEmi.Bodies.Circle
 import engineEmi.Bodies.Ebody
 import engineEmi.CanvasElements.CanvasElement
+import engineEmi.CanvasElements.Kreis
 import engineEmi.Engine
-import engineEmi.Samples.Samples
 
 
 /**
@@ -11,18 +14,46 @@ val engine = Engine()
 
 /**
  * Startpunkt für alle Programme.
- * Hier werden [Ebody] und [CanvasElement] Objekte bei der [Engine] registriert.
- * Hierzu kann man die Methoden [Engine.registerCanvasElement], [Engine.registerBody] und [Engine.register] verwenden.
- * Wir der Parameter sample auf true gesetzt, wird eine Funktionsdemo automatisch geladen
- * Beispiele kann man laden, indem man das Sample als Parameter in [Engine.run] übergibt
- * Zum Beispiel: engine.run(sample = Samples.INPUT)
+ * Hier werden u.a. [Ebody] und [CanvasElement] Objekte bei der [Engine] registriert.
+ * Es gibt drei Bereiche:
+ * init : Dieser Code-Block wird zur Konfiguration der Engine verwendet. Hier kann man z.B. die Höhe und Breite des Fensters festlegen.
+ * Wenn man diesen Block leer lässt, werden Standard-Werte geladen
+ * viewWillLoad: Dieser Code-Block wird NACH der Konfiguration aber VOR dem Aufbau des Views (der Anzeige) ausgeführt. Hier sollte man
+ * seine Objekte bei der Engine registrieren
+ * viewDidLoad: Dieser Code-Block wird NACH dem der View komplett aufgebaut wurde ausgeführt. Hier sollte man Code platzieren, der darauf
+ * angewiesen ist, dass Objekte bereits fertig erstellt und registriert wurden. Dies trifft vor allem auf [EBody] Objekte zu.
  */
-fun main() {
-    engine.run(sample = Samples.HUGE) {
+fun main() = runBlockingNoSuspensions {
+    engine.run {
 
-        // HIER WIRD PROGRAMMIERT
+        /**
+         * Code um die Engine zu konfigurieren.
+         */
+        init {
+            view.width = 500
+            view.height = 500
+            view.scale = 100
+        }
 
+        /**
+         * Code der VOR dem Aufbau des Views ausgeführt wird
+         */
+        viewWillLoad {
+            val kreis = Kreis(50, 100, 100, Colors.RED)
+            val circ = Circle(fillColor = Colors.GREEN, radius = 0.5, x = 0, y = 0)
+            registerCanvasElement(kreis)
+            register(circ)
+        }
 
+        /**
+         * Code, der NACH dem Aufbau des Views ausgeführt wird
+         */
+        viewDidLoad {
+
+        }
+
+        start()
     }
+
 }
 

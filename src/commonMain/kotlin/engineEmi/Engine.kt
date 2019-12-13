@@ -8,7 +8,6 @@ import com.soywiz.korev.mouse
 import com.soywiz.korge.Korge
 import com.soywiz.korge.box2d.WorldView
 import com.soywiz.korge.box2d.worldView
-import com.soywiz.korge.input.Input
 import com.soywiz.korge.input.onDown
 import com.soywiz.korge.input.onKeyDown
 import com.soywiz.korge.input.onKeyUp
@@ -21,11 +20,7 @@ import com.soywiz.korio.async.launch
 import engineEmi.Bodies.Ebody
 import engineEmi.CanvasElements.CanvasElement
 import engineEmi.Input.Keyboard
-import engineEmi.Samples.HugeSample
-import engineEmi.Samples.InputSample.InputSample
-import engineEmi.Samples.PhysikSample.PhysikSample
 import engineEmi.Samples.Samples
-import kotlinx.coroutines.GlobalScope
 
 /**
  * Die Game-Engine. Sie ist ein Singleton und wird mit [Engine.run] gestartet.
@@ -36,107 +31,81 @@ import kotlinx.coroutines.GlobalScope
 class Engine {
     var canvasElements = mutableListOf<CanvasElement>()
     var bodies = mutableListOf<Ebody>()
-
     var view = ViewWindow()
-    var viewHeight = 0.0
-        private set
-    var viewWidth = 0.0
-        private set
-    var sample = false
-    var input = emptyList<Input>()
+    var viewWillLoadBody: () -> Unit = {}
+    var viewDidLoadBody: () -> Unit = {}
 
-    /**
-     * Startet die Engine. Kann Parameter zur Konfiguration übernehmen
-     * @param sample Lädt eine Beispielszene
-     */
-
-    fun run(
-        width: Int = 1280,
-        height: Int = 720,
-        sample: Samples = Samples.NONE,
-        inputs: List<Input> = emptyList<Input>(),
-        afterSetup: suspend () -> Unit = {},
-        scale: Int = 100,
-        body: suspend () -> Unit = {}
-    ) {
-        var nbody = body
-        var afterSetup = afterSetup
-        when (sample) {
-            Samples.HUGE -> nbody = HugeSample.invoke(this)
-            Samples.INPUT -> nbody = InputSample.invoke(this)
-            Samples.PHYSIK -> {
-                nbody = PhysikSample.invoke(this); afterSetup = PhysikSample.afterSetup(this)
-            }
-            Samples.NONE -> {
-            }
-        }
-        GlobalScope.launch {
-            main(body = nbody, afterSetup = afterSetup, width = width, height = height, scale = scale)
-        }
-
+    suspend fun init(initBody: () -> Unit) = this.apply {
+        view.width = 1280
+        view.height = 720
+        view.scale = 100
+        initBody()
     }
 
-    suspend fun main(body: suspend () -> Unit, afterSetup: suspend () -> Unit, width: Int, height: Int, scale: Int) =
-        Korge(quality = GameWindow.Quality.PERFORMANCE, title = "Engine Emi", width = width, height = height) {
-            body()
-            view.width = this.views.virtualWidth
-            view.height = this.views.virtualHeight
+    suspend fun start(
+        sample: Samples = Samples.NONE,
+        initBody: () -> Unit = {}
+    ) =
+        Korge(
+            quality = GameWindow.Quality.PERFORMANCE,
+            title = "Engine Emi",
+            width = view.width,
+            height = view.height
+
+        ) {
+
             views.clearColor = Colors.WHITE
-            // Physik
+            viewWillLoadBody()
 
+            // BOX2D
             worldView {
+                position(view.width / 2, view.height / 2).scale(view.scale)
 
-
-                position(view.width / 2, view.height / 2).scale(scale)
-
-                // X: -20 bis +50
-                // Y: -20 bis +20
-
-                if (!bodies.isEmpty()) {
-
+                if (bodies.isNotEmpty()) {
                     bodies.run {
                         map { registerBodyWithWorld(it) }
                         map { it.body }
                     }
                 }
             }
-            afterSetup()
 
-        //Physikfreie Zone
-        if (!canvasElements.isEmpty()) {
-            canvasElements.run {
-                map { it.prepareElement() }
-                map { addChild(it) }
-            }
-            launch {
-                while (true) {
-                    canvasElements.onEach { it.animate() }
-                    delay(16.milliseconds)
+            // CANVAS
+            if (!canvasElements.isEmpty()) {
+                canvasElements.run {
+                    map { it.prepareElement() }
+                    map { addChild(it) }
                 }
+                launch {
+                    while (true) {
+                        canvasElements.onEach { it.animate() }
+                        delay(16.milliseconds)
+                    }
+                }
+
             }
 
+
+            // GLOBAL (CANVAS AND BOX2D)
+            addEventListener<MouseEvent> { canvasElements.onEach { element -> element.reactToMouseEvent(it) } }
+            addEventListener<MouseEvent> { bodies.onEach { element -> element.reactToMouseEvent(it) } }
+
+            keys {
+                onKeyDown { Keyboard.keyDown(it.key) }
+                onKeyUp { Keyboard.keyReleased(it.key) }
+            }
+
+            mouse {
+                onDown { }
+            }
+            viewDidLoadBody()
         }
 
-        addEventListener<MouseEvent> { canvasElements.onEach { element -> element.reactToMouseEvent(it) } }
-        addEventListener<MouseEvent> { bodies.onEach { element -> element.reactToMouseEvent(it) } }
-
-
-        // INPUT
-        keys {
-            onKeyDown { Keyboard.keyDown(it.key) }
-            onKeyUp { Keyboard.keyReleased(it.key) }
-        }
-
-        mouse {
-            onDown { }
-        }
-
-
+    suspend fun viewWillLoad(viewWillLoadBody: () -> Unit = {}) {
+        this.viewWillLoadBody = viewWillLoadBody
     }
 
-
-    suspend fun WorldView.registerBodyWithWorld(body: Ebody) {
-        body.initForWorld(this.world)
+    suspend fun viewDidLoad(viewDidLoadBody: () -> Unit = {}) {
+        this.viewDidLoadBody = viewDidLoadBody
     }
 
     /**
@@ -169,11 +138,14 @@ class Engine {
             o is CanvasElement -> registerCanvasElement(o)
         }
     }
-
-
 }
 
 class ViewWindow {
     var height = 0
     var width = 0
+    var scale = 0
+}
+
+suspend fun WorldView.registerBodyWithWorld(body: Ebody) {
+    body.initForWorld(this.world)
 }

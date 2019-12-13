@@ -1,3 +1,4 @@
+/*
 package engineEmi.Samples
 
 import com.soywiz.korim.color.Colors
@@ -108,3 +109,4 @@ object HugeSample {
 
     }
 }
+*/
