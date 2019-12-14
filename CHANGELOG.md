@@ -1,4 +1,15 @@
-### Gradle muss noch mit Tasks für Samples versehen werden REadme angepasst Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de> (HEAD -> dev)
+### Gradle muss noch mit Tasks für Samples versehen werden REadme angepasst Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+>Fri, 13 Dec 2019 11:02:35 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Gradle muss noch mit Tasks für Samples versehen werden (origin/dev)
 >Fri, 13 Dec 2019 11:02:35 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
