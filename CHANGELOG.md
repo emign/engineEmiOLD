@@ -1,4 +1,15 @@
-### Keyboard hat jetzt lastKeyDown Property (HEAD -> master)
+### Veränderbare delay-Property der Engine für Wartezeit zwischen den Frames (HEAD -> master)
+>Sun, 15 Dec 2019 20:45:00 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Keyboard hat jetzt lastKeyDown Property
 >Sun, 15 Dec 2019 20:40:49 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)

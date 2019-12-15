@@ -39,6 +39,7 @@ class Engine {
     var viewWillLoadBody: suspend () -> Unit = {}
     var viewDidLoadBody: suspend () -> Unit = {}
     var title = "Engine Emi"
+    var delay = 16.milliseconds
 
     fun init(initBody: () -> Unit) = this.apply {
         view.width = 1280
@@ -77,7 +78,7 @@ class Engine {
                 launch {
                     while (true) {
                         canvasElements.onEach { it.animate() }
-                        delay(16.milliseconds)
+                        delay(delay)
                     }
                 }
             }
