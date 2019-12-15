@@ -1,3 +1,14 @@
+### Strukturierung. ScreenElement.kt enthält nun Bodies und CanvasElemente (HEAD -> Strukturierung)
+>Sun, 15 Dec 2019 20:04:08 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
 ### Gradle muss noch mit Tasks für Samples versehen werden REadme angepasst Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 >Fri, 13 Dec 2019 11:02:35 +0100
 
@@ -9,7 +20,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### Gradle muss noch mit Tasks für Samples versehen werden (origin/dev)
+### Gradle muss noch mit Tasks für Samples versehen werden
 >Fri, 13 Dec 2019 11:02:35 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -75,7 +86,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### Korge 1.4.3c (origin/master, master, libraryTest)
+### Korge 1.4.3c (libraryTest)
 >Wed, 11 Dec 2019 10:49:32 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -108,7 +119,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### PhysikSample integriert (physikdemo, Conversiponteest)
+### PhysikSample integriert (physikdemo)
 >Mon, 9 Dec 2019 22:26:45 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)

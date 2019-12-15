@@ -2,11 +2,11 @@ import com.soywiz.korim.color.Colors
 import com.soywiz.korim.format.readBitmap
 import com.soywiz.korio.async.launch
 import com.soywiz.korio.file.std.resourcesVfs
-import engineEmi.Bodies.Circle
-import engineEmi.Bodies.Image
-import engineEmi.Bodies.Rectangle
-import engineEmi.CanvasElements.Gerade
 import engineEmi.Engine
+import engineEmi.ScreenElements.Bodies.Circle
+import engineEmi.ScreenElements.Bodies.Image
+import engineEmi.ScreenElements.Bodies.Rectangle
+import engineEmi.ScreenElements.CanvasElements.Gerade
 import kotlinx.coroutines.GlobalScope
 import org.jbox2d.dynamics.BodyType
 
@@ -29,7 +29,14 @@ object HugeSample {
                 viewWillLoad {
                     //val meinRechteck = Rechteck(höhe = 100.0, breite = 100.0, x = 100.0, y = 100.0, fuellFarbe = Colors.LAWNGREEN)
                     //val meineGerade =
-                    Gerade(x = 10.0, y = 10.0, toX = 100.0, toY = 180.0, dicke = 3, fuellFarbe = Colors.BLUEVIOLET)
+                    Gerade(
+                        x = 10.0,
+                        y = 10.0,
+                        toX = 100.0,
+                        toY = 180.0,
+                        dicke = 3,
+                        fuellFarbe = Colors.BLUEVIOLET
+                    )
                     //val meinBild = Bild(x = 100.0, y = 150.0, bildDatei = "hut.png", skalierung = 0.5f)
 
                     // val meinArray = arrayOf(meinRechteck, meineGerade)

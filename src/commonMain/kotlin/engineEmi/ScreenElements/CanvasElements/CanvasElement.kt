@@ -1,16 +1,16 @@
-package engineEmi.CanvasElements
+package engineEmi.ScreenElements.CanvasElements
 
 
-import com.soywiz.korev.MouseEvent
 import com.soywiz.korge.view.Container
 import com.soywiz.korge.view.sgraphics
-import engineEmi.Input.MouseEventReacteable
+import engineEmi.Log
+import engineEmi.ScreenElements.ScreenElement
 
 
 abstract class CanvasElement(
     x: Double,
     y: Double
-) : Container(), MouseEventReacteable {
+) : Container(), ScreenElement {
 
     init {
         super.x = x
@@ -34,8 +34,13 @@ abstract class CanvasElement(
      * Änderungen der Parameter wie etwa x und y werden so direkt angezeigt, wenn man sie überschreibt.
      * Alternativ kann man auch bestehenden Objekten neue Animationen zuweisen. Die geht etwa mit Hilfe von [animate]
      */
-    open suspend fun animate() {
+    open suspend fun onEveryFrame() {
         animationRoutine()
+    }
+
+    open suspend fun animate() {
+        Log.log("Überholt. Bitte onEveryFrame() verwedenn")
+        onEveryFrame()
     }
 
     /**
@@ -49,5 +54,5 @@ abstract class CanvasElement(
      */
     abstract fun updateGraphics()
 
-    override fun reactToMouseEvent(event: MouseEvent) {}
+
 }

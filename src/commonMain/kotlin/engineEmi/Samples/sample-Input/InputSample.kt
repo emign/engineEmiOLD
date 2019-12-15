@@ -3,11 +3,11 @@ import com.soywiz.korev.MouseEvent
 import com.soywiz.korim.color.Colors
 import com.soywiz.korim.color.RGBA
 import com.soywiz.korio.async.runBlockingNoSuspensions
-import engineEmi.Bodies.Ebody
-import engineEmi.CanvasElements.CanvasElement
-import engineEmi.CanvasElements.Kreis
 import engineEmi.Engine
 import engineEmi.Input.Keyboard
+import engineEmi.ScreenElements.Bodies.Ebody
+import engineEmi.ScreenElements.CanvasElements.CanvasElement
+import engineEmi.ScreenElements.CanvasElements.Kreis
 
 
 /**

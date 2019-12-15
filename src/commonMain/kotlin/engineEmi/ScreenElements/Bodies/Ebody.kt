@@ -1,10 +1,9 @@
-package engineEmi.Bodies
+package engineEmi.ScreenElements.Bodies
 
-import com.soywiz.korev.MouseEvent
 import com.soywiz.korge.box2d.setPosition
 import com.soywiz.korge.box2d.setView
 import com.soywiz.korge.view.View
-import engineEmi.Input.MouseEventReacteable
+import engineEmi.ScreenElements.ScreenElement
 import org.jbox2d.collision.shapes.Shape
 import org.jbox2d.dynamics.*
 
@@ -25,7 +24,7 @@ abstract class Ebody(
     var friction: Float,
     var restitution: Float,
     var bodyType: BodyType
-) : MouseEventReacteable {
+) : ScreenElement {
 
     /**
      * shape, bd und fixture müssen in den Subklassen überschrieben werden
@@ -93,8 +92,5 @@ abstract class Ebody(
             type = bodyType
             setPosition(x, y)
         }
-    }
-
-    override fun reactToMouseEvent(event: MouseEvent) {
     }
 }

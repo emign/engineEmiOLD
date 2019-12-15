@@ -1,10 +1,7 @@
-import com.soywiz.korim.color.Colors
 import com.soywiz.korio.async.launch
-import engineEmi.Bodies.Circle
-import engineEmi.Bodies.Ebody
-import engineEmi.CanvasElements.CanvasElement
-import engineEmi.CanvasElements.Kreis
 import engineEmi.Engine
+import engineEmi.ScreenElements.Bodies.Ebody
+import engineEmi.ScreenElements.CanvasElements.CanvasElement
 import kotlinx.coroutines.GlobalScope
 
 
@@ -32,19 +29,14 @@ fun main() {
              * Code um die Engine zu konfigurieren.
              */
             init {
-                view.width = 500
-                view.height = 500
-                view.scale = 100
+
             }
 
             /**
              * Code der VOR dem Aufbau des Views ausgeführt wird
              */
             viewWillLoad {
-                val kreis = Kreis(50, 100, 100, Colors.RED)
-                val circ = Circle(fillColor = Colors.GREEN, radius = 0.5, x = 0, y = 0)
-                registerCanvasElement(kreis)
-                register(circ)
+
             }
 
             /**

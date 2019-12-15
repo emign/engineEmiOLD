@@ -1,4 +1,4 @@
-package engineEmi.CanvasElements
+package engineEmi.ScreenElements.CanvasElements
 
 import com.soywiz.korge.view.graphics
 import com.soywiz.korge.view.position

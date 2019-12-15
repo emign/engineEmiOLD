@@ -17,9 +17,10 @@ import com.soywiz.korgw.GameWindow
 import com.soywiz.korim.color.Colors
 import com.soywiz.korio.async.delay
 import com.soywiz.korio.async.launch
-import engineEmi.Bodies.Ebody
-import engineEmi.CanvasElements.CanvasElement
 import engineEmi.Input.Keyboard
+import engineEmi.ScreenElements.Bodies.Ebody
+import engineEmi.ScreenElements.CanvasElements.CanvasElement
+import engineEmi.ScreenElements.ScreenElement
 
 /**
  * Die Game-Engine. Sie ist ein Singleton und wird mit [Engine.run] gestartet.
@@ -30,9 +31,14 @@ import engineEmi.Input.Keyboard
 class Engine {
     var canvasElements = mutableListOf<CanvasElement>()
     var bodies = mutableListOf<Ebody>()
+    val allScreenElements: List<ScreenElement>
+        get() {
+            return canvasElements.plus(bodies).map { it }
+        }
     var view = ViewWindow()
     var viewWillLoadBody: suspend () -> Unit = {}
     var viewDidLoadBody: suspend () -> Unit = {}
+    var title = "Engine Emi"
 
     fun init(initBody: () -> Unit) = this.apply {
         view.width = 1280
@@ -44,19 +50,16 @@ class Engine {
     suspend fun start() =
         Korge(
             quality = GameWindow.Quality.PERFORMANCE,
-            title = "Engine Emi",
+            title = title,
             width = view.width,
             height = view.height
-
         ) {
-
             views.clearColor = Colors.WHITE
             viewWillLoadBody()
 
             // BOX2D
             worldView {
                 position(view.width / 2, view.height / 2).scale(view.scale)
-
                 if (bodies.isNotEmpty()) {
                     bodies.run {
                         map { registerBodyWithWorld(it) }
@@ -81,8 +84,7 @@ class Engine {
 
 
             // GLOBAL (CANVAS AND BOX2D)
-            addEventListener<MouseEvent> { canvasElements.onEach { element -> element.reactToMouseEvent(it) } }
-            addEventListener<MouseEvent> { bodies.onEach { element -> element.reactToMouseEvent(it) } }
+            addEventListener<MouseEvent> { allScreenElements.onEach { element -> element.reactToMouseEvent(it) } }
 
             keys {
                 onKeyDown { Keyboard.keyDown(it.key) }

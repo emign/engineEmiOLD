@@ -1,4 +1,4 @@
-package engineEmi.CanvasElements
+package engineEmi.ScreenElements.CanvasElements
 
 import com.soywiz.korim.color.Colors
 import com.soywiz.korim.color.RGBA

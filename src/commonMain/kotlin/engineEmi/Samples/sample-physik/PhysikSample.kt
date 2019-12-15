@@ -3,9 +3,9 @@ import com.soywiz.korim.color.Colors
 import com.soywiz.korim.format.readBitmap
 import com.soywiz.korio.async.launch
 import com.soywiz.korio.file.std.resourcesVfs
-import engineEmi.Bodies.Image
-import engineEmi.Bodies.Rectangle
 import engineEmi.Engine
+import engineEmi.ScreenElements.Bodies.Image
+import engineEmi.ScreenElements.Bodies.Rectangle
 import kotlinx.coroutines.GlobalScope
 import org.jbox2d.common.Vec2
 import org.jbox2d.dynamics.BodyType
