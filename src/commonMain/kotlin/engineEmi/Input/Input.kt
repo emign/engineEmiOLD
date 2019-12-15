@@ -11,10 +11,13 @@ object Keyboard {
     //val keys = Key.values().associate { it to false }.toMutableMap()
 
     var keys = Key.values().associate { it to false }.toMutableMap()
+    var lastKeyDown = Key.UNKNOWN
+        private set
     val mutex = Mutex()
 
     suspend fun keyDown(key: Key) {
         mutex.withLock {
+            lastKeyDown = key
             keys[key] = true
         }
     }

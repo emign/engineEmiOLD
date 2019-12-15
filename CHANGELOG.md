@@ -1,4 +1,15 @@
-### Strukturierung. ScreenElement.kt enthält nun Bodies und CanvasElemente (HEAD -> Strukturierung)
+### Keyboard hat jetzt lastKeyDown Property (HEAD -> master)
+>Sun, 15 Dec 2019 20:40:49 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Strukturierung. ScreenElement.kt enthält nun Bodies und CanvasElemente (Strukturierung)
 >Sun, 15 Dec 2019 20:04:08 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
