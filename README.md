@@ -7,6 +7,14 @@
 
 # Changelog
 
+## v0.19 2019-12-16
+
+### Added
+- Controller Klasse eingefügt inkl. Methoden registerController()
+- Engine: Veränderbare delay-Property der Engine für Wartezeit zwischen den Frames
+- Keyboard hat jetzt `lastKeyDown` Property
+- `ScreenElement.kt` enthält nun `Bodies` und `CanvasElemente (Strukturierung)
+
 ## 0.18 2019-12-14 
 
 ### Wichtig

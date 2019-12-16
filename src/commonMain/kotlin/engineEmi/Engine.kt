@@ -125,7 +125,7 @@ class Engine {
     }
 
     /**
-     * Registriert einen [Controller] bei der Engeine
+     * Registriert einen [Controller] bei der Engine
      * @param controller Controller
      */
     fun registerController(controller: Controller) {
@@ -139,13 +139,16 @@ class Engine {
      * @param o Any
      */
     fun register(o: Any) {
-        when (o) {
-            is Array<*> -> o.map { it?.let { register(it); println("isArray") } }
-            is Collection<*> -> o.map { it?.let { register(it); println("isCollection") } }
-            is Ebody -> registerBody(o).also { println("isEbody") }
-            is CanvasElement -> registerCanvasElement(o).also { println("isCanvasElement") }
-            is Controller -> registerController(o).also { println("Controller") }
-        }
+        if (o is Array<*>)
+            o.map { it?.let { register(it); println("isArray") } }
+        if (o is Collection<*>)
+            o.map { it?.let { register(it); println("isArray") } }
+        if (o is Ebody)
+            registerBody(o).also { println("isEbody") }
+        if (o is CanvasElement)
+            registerCanvasElement(o).also { println("isCanvasElement") }
+        if (o is Controller)
+            registerController(o).also { println("Controller") }
     }
 }
 

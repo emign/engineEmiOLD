@@ -1,4 +1,15 @@
-### Controller Klasse eingefügt (HEAD -> Controller)
+### v0.19 (HEAD -> master)
+>Mon, 16 Dec 2019 14:32:51 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Controller Klasse eingefügt (Controller)
 >Mon, 16 Dec 2019 14:28:11 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -20,7 +31,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### Cleaned up build.gradle (master)
+### Cleaned up build.gradle
 >Mon, 16 Dec 2019 13:06:24 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
