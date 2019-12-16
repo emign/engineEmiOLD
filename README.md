@@ -5,12 +5,12 @@
 ![](https://img.shields.io/github/v/release/emign/engineEmi?labelColor=262B30)
 
 
-# Changelog
+# Changelog`
 
 ## v0.19 2019-12-16
 
 ### Added
-- Controller Klasse eingefügt inkl. Methoden registerController()
+- Controller Klasse eingefügt inkl. Funktion registerController()`
 - Engine: Veränderbare delay-Property der Engine für Wartezeit zwischen den Frames
 - Keyboard hat jetzt `lastKeyDown` Property
 - `ScreenElement.kt` enthält nun `Bodies` und `CanvasElemente (Strukturierung)

@@ -1,4 +1,15 @@
-### v0.19 (HEAD -> master)
+### Tippfehler README.md (HEAD -> master)
+>Mon, 16 Dec 2019 14:39:26 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### v0.19 (origin/master)
 >Mon, 16 Dec 2019 14:32:51 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
