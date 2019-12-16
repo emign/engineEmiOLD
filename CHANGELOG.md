@@ -1,4 +1,15 @@
-### Veränderbare delay-Property der Engine für Wartezeit zwischen den Frames (HEAD -> master)
+### Cleaned up build.gradle (HEAD -> master)
+>Mon, 16 Dec 2019 13:06:24 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Veränderbare delay-Property der Engine für Wartezeit zwischen den Frames
 >Sun, 15 Dec 2019 20:45:00 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)

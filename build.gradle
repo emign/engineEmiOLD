@@ -13,7 +13,6 @@ buildscript {
 
 apply plugin : "korge"
 apply plugin : "org.jetbrains.dokka"
-apply plugin : "application"
 
 korge {
     id = "me.emig.engineEmi"
