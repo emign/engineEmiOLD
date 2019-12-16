@@ -35,6 +35,7 @@ class Engine {
         get() {
             return canvasElements.plus(bodies).map { it }
         }
+    var controllers = mutableListOf<Controller>()
     var view = ViewWindow()
     var viewWillLoadBody: suspend () -> Unit = {}
     var viewDidLoadBody: suspend () -> Unit = {}
@@ -61,6 +62,7 @@ class Engine {
             // BOX2D
             worldView {
                 position(view.width / 2, view.height / 2).scale(view.scale)
+
                 if (bodies.isNotEmpty()) {
                     bodies.run {
                         map { registerBodyWithWorld(it) }
@@ -85,7 +87,7 @@ class Engine {
 
 
             // GLOBAL (CANVAS AND BOX2D)
-            addEventListener<MouseEvent> { allScreenElements.onEach { element -> element.reactToMouseEvent(it) } }
+            addEventListener<MouseEvent> { controllers.onEach { element -> element.reactToMouseEvent(it) } }
 
             keys {
                 onKeyDown { Keyboard.keyDown(it.key) }
@@ -123,17 +125,26 @@ class Engine {
     }
 
     /**
+     * Registriert einen [Controller] bei der Engeine
+     * @param controller Controller
+     */
+    fun registerController(controller: Controller) {
+        controllers.add(controller)
+    }
+
+    /**
      * Registriert einen [Ebody] oder ein [CanvasElement] bei der Engine
      * Es ist auch möglich Arrays und Collections zu registrieren.
      * [Ebody] und [CanvasElement] dürfen in den Arrays oder Collections nicht gemischt vorkommen
      * @param o Any
      */
     fun register(o: Any) {
-        when {
-            o is Array<*> -> o.map { it?.let { register(it) } }
-            o is Collection<*> -> o.map { it?.let { register(it) } }
-            o is Ebody -> registerBody(o)
-            o is CanvasElement -> registerCanvasElement(o)
+        when (o) {
+            is Array<*> -> o.map { it?.let { register(it); println("isArray") } }
+            is Collection<*> -> o.map { it?.let { register(it); println("isCollection") } }
+            is Ebody -> registerBody(o).also { println("isEbody") }
+            is CanvasElement -> registerCanvasElement(o).also { println("isCanvasElement") }
+            is Controller -> registerController(o).also { println("Controller") }
         }
     }
 }

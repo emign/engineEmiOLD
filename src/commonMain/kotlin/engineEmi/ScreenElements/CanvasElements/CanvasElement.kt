@@ -3,6 +3,7 @@ package engineEmi.ScreenElements.CanvasElements
 
 import com.soywiz.korge.view.Container
 import com.soywiz.korge.view.sgraphics
+import engineEmi.Controller
 import engineEmi.Log
 import engineEmi.ScreenElements.ScreenElement
 
@@ -10,7 +11,7 @@ import engineEmi.ScreenElements.ScreenElement
 abstract class CanvasElement(
     x: Double,
     y: Double
-) : Container(), ScreenElement {
+) : Container(), ScreenElement, Controller {
 
     init {
         super.x = x

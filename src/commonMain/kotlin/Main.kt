@@ -2,6 +2,7 @@ import com.soywiz.korio.async.launch
 import engineEmi.Engine
 import engineEmi.ScreenElements.Bodies.Ebody
 import engineEmi.ScreenElements.CanvasElements.CanvasElement
+import engineEmi.ScreenElements.CanvasElements.Rechteck
 import kotlinx.coroutines.GlobalScope
 
 
@@ -29,7 +30,7 @@ fun main() {
              * Code um die Engine zu konfigurieren.
              */
             init {
-
+                register(Rechteck())
             }
 
             /**
