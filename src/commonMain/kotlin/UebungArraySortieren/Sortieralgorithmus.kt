@@ -1,6 +1,7 @@
 package UebungArraySortieren
 
-import engineEmi.CanvasElements.Rechteck
+import engineEmi.ScreenElements.CanvasElements.Rechteck
+
 
 abstract class Sortieralgorithmus {
     abstract suspend fun sortieren(array: Array<Rechteck>)

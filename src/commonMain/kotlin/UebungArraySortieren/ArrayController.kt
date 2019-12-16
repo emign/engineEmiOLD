@@ -1,8 +1,8 @@
 package UebungArraySortieren
 
 import com.soywiz.korim.color.RGBA
-import engineEmi.CanvasElements.Rechteck
 import engineEmi.Engine
+import engineEmi.ScreenElements.CanvasElements.Rechteck
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

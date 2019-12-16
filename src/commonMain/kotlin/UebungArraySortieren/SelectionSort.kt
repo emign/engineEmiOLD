@@ -1,6 +1,7 @@
 package UebungArraySortieren
 
-import engineEmi.CanvasElements.Rechteck
+
+import engineEmi.ScreenElements.CanvasElements.Rechteck
 import kotlinx.coroutines.delay
 
 object SelectionSort : Sortieralgorithmus() {

@@ -1,4 +1,37 @@
-### Tippfehler README.md (HEAD -> master)
+### Update auf 0.19 (HEAD -> uebueng_array_sortieren)
+>Mon, 16 Dec 2019 14:43:54 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### BubbleSort und SelectionSort
+>Mon, 9 Dec 2019 10:16:34 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### BubbleSort und SelectionSort
+>Mon, 9 Dec 2019 09:15:42 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Tippfehler README.md (master)
 >Mon, 16 Dec 2019 14:39:26 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -20,7 +53,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### Controller Klasse eingefügt (Controller)
+### Controller Klasse eingefügt
 >Mon, 16 Dec 2019 14:28:11 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -75,7 +108,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### Strukturierung. ScreenElement.kt enthält nun Bodies und CanvasElemente (Strukturierung)
+### Strukturierung. ScreenElement.kt enthält nun Bodies und CanvasElemente
 >Sun, 15 Dec 2019 20:04:08 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -163,7 +196,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### Korge 1.4.3c (libraryTest)
+### Korge 1.4.3c
 >Wed, 11 Dec 2019 10:49:32 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -196,7 +229,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### PhysikSample integriert (physikdemo)
+### PhysikSample integriert
 >Mon, 9 Dec 2019 22:26:45 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)

@@ -1,3 +1,5 @@
+import UebungArraySortieren.ArrayController
+import UebungArraySortieren.BubbleSort
 import com.soywiz.korio.async.launch
 import engineEmi.Engine
 import engineEmi.ScreenElements.Bodies.Ebody
@@ -29,7 +31,12 @@ fun main() {
              * Code um die Engine zu konfigurieren.
              */
             init {
-
+                view.width = 510
+                view.height = 510
+                ArrayController.engine = engine
+                ArrayController.arrayErzeugen(100)
+                ArrayController.sortieralgorithmus = BubbleSort
+                ArrayController.sortieren()
             }
 
             /**
