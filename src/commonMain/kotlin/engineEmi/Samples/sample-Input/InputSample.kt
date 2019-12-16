@@ -3,6 +3,7 @@ import com.soywiz.korev.MouseEvent
 import com.soywiz.korim.color.Colors
 import com.soywiz.korim.color.RGBA
 import com.soywiz.korio.async.runBlockingNoSuspensions
+import engineEmi.Controller
 import engineEmi.Engine
 import engineEmi.Input.Keyboard
 import engineEmi.ScreenElements.Bodies.Ebody
@@ -59,7 +60,7 @@ class BeweglicherKreis(
     y: Number,
     fuellFarbe: RGBA,
     radius: Number
-) : Kreis(x = x, y = y, fuellFarbe = fuellFarbe, radius = radius) {
+) : Kreis(x = x, y = y, fuellFarbe = fuellFarbe, radius = radius), Controller {
     override fun reactToMouseEvent(event: MouseEvent) {
         this.x = event.x.toDouble()
         this.y = event.y.toDouble()

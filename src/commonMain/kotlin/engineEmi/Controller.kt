@@ -5,6 +5,8 @@ import engineEmi.Input.MouseEventReacteable
 
 /**
  * Controller sind Objekte, die nicht als [ScreenElement] auf dem View dargestellt werden, aber trotzdem
+ * z.B. Events entgegen nehmen können oder Anweisungen an andere Objekte schicken können.
+ * Natürlich können auch [ScreenElement]e Controller sein
  */
 interface Controller : MouseEventReacteable {
     override fun reactToMouseEvent(event: MouseEvent) {
