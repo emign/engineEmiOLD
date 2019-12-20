@@ -1,4 +1,37 @@
-### KeyEventlistener hinzugefügt. Auch `Controller` Klasse überarbeitet (HEAD -> master)
+### Fertig (HEAD -> uebung_ampel)
+>Fri, 20 Dec 2019 11:00:21 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Cleanup
+>Fri, 20 Dec 2019 09:57:59 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Cleanup
+>Fri, 20 Dec 2019 09:24:17 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### KeyEventlistener hinzugefügt. Auch `Controller` Klasse überarbeitet (origin/master, master)
 >Fri, 20 Dec 2019 09:59:45 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -31,7 +64,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### v0.19 (origin/master)
+### v0.19
 >Mon, 16 Dec 2019 14:32:51 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)

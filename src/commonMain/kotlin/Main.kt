@@ -9,7 +9,7 @@ import kotlinx.coroutines.GlobalScope
  * Das Default (und eigentlich immer) das einzige Engine-Objekt
  */
 val engine = Engine()
-
+lateinit var auto: Auto
 /**
  * Startpunkt für alle Programme.
  * Hier werden u.a. [Ebody] und [CanvasElement] Objekte bei der [Engine] registriert.
@@ -19,7 +19,7 @@ val engine = Engine()
  * viewWillLoad: Dieser Code-Block wird NACH der Konfiguration aber VOR dem Aufbau des Views (der Anzeige) ausgeführt. Hier sollte man
  * seine Objekte bei der Engine registrieren
  * viewDidLoad: Dieser Code-Block wird NACH dem der View komplett aufgebaut wurde ausgeführt. Hier sollte man Code platzieren, der darauf
- * angewiesen ist, dass Objekte bereits fertig erstellt und registriert wurden. Dies trifft vor allem auf [EBody] Objekte zu.
+ * angewiesen ist, dass Objekte bereits fertig erstellt und registriert wurden. Dies trifft vor allem auf [Ebody] Objekte zu.
  */
 fun main() {
     GlobalScope.launch {
@@ -31,8 +31,9 @@ fun main() {
             init {
                 view.width = 200
                 view.height = 400
-                val ampel = Ampel()
-                engine.register(ampel)
+                engine.register(Ampel)
+                auto = Auto()
+                engine.register(auto)
             }
 
             /**
@@ -46,7 +47,7 @@ fun main() {
              * Code, der NACH dem Aufbau des Views ausgeführt wird
              */
             viewDidLoad {
-
+                auto.fahren()
             }
 
             start()
