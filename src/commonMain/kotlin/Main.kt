@@ -29,7 +29,9 @@ fun main() {
              * Code um die Engine zu konfigurieren.
              */
             init {
-
+                view.width = 200
+                view.height = 400
+                val ampel = Ampel()
             }
 
             /**
