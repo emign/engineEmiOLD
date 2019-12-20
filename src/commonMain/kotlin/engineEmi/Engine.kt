@@ -90,8 +90,8 @@ class Engine {
             addEventListener<MouseEvent> { controllers.onEach { element -> element.reactToMouseEvent(it) } }
 
             keys {
-                onKeyDown { Keyboard.keyDown(it.key) }
-                onKeyUp { Keyboard.keyReleased(it.key) }
+                onKeyDown { Keyboard.keyDown(it.key); controllers.onEach { element -> element.reactToKeyEvent(it) } }
+                onKeyUp { Keyboard.keyReleased(it.key); controllers.onEach { element -> element.reactToKeyEvent(it) } }
             }
 
             mouse {

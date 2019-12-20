@@ -2,6 +2,7 @@ package engineEmi.Input
 
 
 import com.soywiz.korev.Key
+import com.soywiz.korev.KeyEvent
 import com.soywiz.korev.MouseEvent
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
@@ -41,7 +42,6 @@ interface MouseEventReacteable {
     fun reactToMouseEvent(event: MouseEvent)
 }
 
-
-
-
-
+interface KeyEventReacteable {
+    fun reactToKeyEvent(event: KeyEvent)
+}
