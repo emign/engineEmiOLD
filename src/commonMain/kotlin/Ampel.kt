@@ -2,6 +2,7 @@ import com.soywiz.korev.Key
 import com.soywiz.korev.KeyEvent
 import com.soywiz.korim.color.Colors
 import engineEmi.Controller
+import engineEmi.Phase
 import engineEmi.ScreenElements.CanvasElements.Rechteck
 
 class Ampel : Controller {
@@ -9,6 +10,9 @@ class Ampel : Controller {
     val lampeRot = Lampe(Colors.RED, gehaeuse)
     val lampeGelb = Lampe(Colors.YELLOW, gehaeuse)
     val lampeGruen = Lampe(Colors.GREEN, gehaeuse)
+
+    var phasen = arrayOf(Phase.ROT, Phase.ROTGELB, Phase.GRUEN, Phase.GELB)
+    var aktuellePhase = 0
 
     init {
         engine.register(gehaeuse)
@@ -18,8 +22,30 @@ class Ampel : Controller {
     }
 
     override fun reactToKeyEvent(event: KeyEvent) {
-        if (event.key == Key.SPACE) {
-            lampeRot.aus()
+        if (event.key == Key.SPACE && event.type == KeyEvent.Type.DOWN) {
+            lampenSchalten(phasen[aktuellePhase])
+            naechstePhase()
+        }
+    }
+
+    fun naechstePhase() {
+        aktuellePhase = (aktuellePhase + 1) % phasen.size
+    }
+
+    fun lampenSchalten(phase: Phase) {
+        when (phase) {
+            Phase.ROT -> {
+                lampeRot.an(); lampeGelb.aus(); lampeGruen.aus()
+            }
+            Phase.ROTGELB -> {
+                lampeRot.an(); lampeGelb.an(); lampeGruen.aus()
+            }
+            Phase.GRUEN -> {
+                lampeRot.aus(); lampeGelb.aus(); lampeGruen.an()
+            }
+            Phase.GELB -> {
+                lampeRot.aus(); lampeGelb.an(); lampeGruen.aus()
+            }
         }
     }
 }

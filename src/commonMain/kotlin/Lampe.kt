@@ -16,6 +16,7 @@ class Lampe(var farbe: RGBA, var inGehauese: Gehaeuse) : Kreis(
             Colors.YELLOW -> y += inGehauese.hoehe.toInt() / 3
             Colors.GREEN -> y += inGehauese.hoehe.toInt() / 1.5
         }
+        anzeigeAktualisieren()
     }
 
     fun an() {
@@ -30,9 +31,18 @@ class Lampe(var farbe: RGBA, var inGehauese: Gehaeuse) : Kreis(
 
     fun anzeigeAktualisieren() {
         when (zustand) {
-            Zustand.AUS -> alpha = 0.5
+            Zustand.AUS -> alpha = 0.1
             Zustand.AN -> alpha = 1.0
         }
+    }
+
+    fun schalten() {
+        when (zustand) {
+            Zustand.AN -> aus()
+            Zustand.AUS -> an()
+        }
+        anzeigeAktualisieren()
+
     }
 
 

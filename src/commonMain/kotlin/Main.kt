@@ -32,6 +32,7 @@ fun main() {
                 view.width = 200
                 view.height = 400
                 val ampel = Ampel()
+                engine.register(ampel)
             }
 
             /**
