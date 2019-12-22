@@ -1,4 +1,15 @@
-### Fertig (HEAD -> uebung_ampel)
+### Fertig (HEAD -> uebeung_ampel_vorlage)
+>Sun, 22 Dec 2019 10:06:44 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Fertig (origin/uebung_ampel, uebung_ampel)
 >Fri, 20 Dec 2019 11:00:21 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)

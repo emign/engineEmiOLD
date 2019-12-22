@@ -9,7 +9,7 @@ class Lampe(var farbe: RGBA, var inGehauese: Gehaeuse) : Kreis(
     radius = inGehauese.breite.toInt() * 0.4
 ) {
 
-    var zustand = Zustand.AUS
+    private var zustand = Zustand.AUS
 
     init {
         when (farbe) {
@@ -29,10 +29,10 @@ class Lampe(var farbe: RGBA, var inGehauese: Gehaeuse) : Kreis(
         anzeigeAktualisieren()
     }
 
-    fun anzeigeAktualisieren() {
-        when (zustand) {
-            Zustand.AUS -> alpha = 0.1
-            Zustand.AN -> alpha = 1.0
+    private fun anzeigeAktualisieren() {
+        alpha = when (zustand) {
+            Zustand.AUS -> 0.1
+            Zustand.AN -> 1.0
         }
     }
 
@@ -42,7 +42,6 @@ class Lampe(var farbe: RGBA, var inGehauese: Gehaeuse) : Kreis(
             Zustand.AUS -> an()
         }
         anzeigeAktualisieren()
-
     }
 
 

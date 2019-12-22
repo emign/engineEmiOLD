@@ -29,9 +29,10 @@ fun main() {
              * Code um die Engine zu konfigurieren.
              */
             init {
-                view.width = 200
-                view.height = 400
-                engine.register(Ampel)
+
+
+                // Das Auto ist bereits fertig implementiert und fährt immer, wenn die Ampel grün ist:
+                // istGruen() liefert dann true.
                 auto = Auto()
                 engine.register(auto)
             }
@@ -47,6 +48,7 @@ fun main() {
              * Code, der NACH dem Aufbau des Views ausgeführt wird
              */
             viewDidLoad {
+                // Hier muss man nichts machen
                 auto.fahren()
             }
 
