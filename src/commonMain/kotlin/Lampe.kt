@@ -20,28 +20,16 @@ class Lampe(var farbe: RGBA, var inGehauese: Gehaeuse) : Kreis(
     }
 
     fun an() {
-        zustand = Zustand.AN
-        anzeigeAktualisieren()
     }
 
     fun aus() {
-        zustand = Zustand.AUS
-        anzeigeAktualisieren()
     }
 
     private fun anzeigeAktualisieren() {
-        alpha = when (zustand) {
-            Zustand.AUS -> 0.1
-            Zustand.AN -> 1.0
-        }
     }
 
     fun schalten() {
-        when (zustand) {
-            Zustand.AN -> aus()
-            Zustand.AUS -> an()
-        }
-        anzeigeAktualisieren()
+
     }
 
 

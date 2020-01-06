@@ -1,4 +1,3 @@
-import com.soywiz.korev.Key
 import com.soywiz.korev.KeyEvent
 import com.soywiz.korim.color.Colors
 import engineEmi.Controller
@@ -20,10 +19,6 @@ object Ampel : Controller {
     }
 
     override fun reactToKeyEvent(event: KeyEvent) {
-        if (event.key == Key.SPACE && event.type == KeyEvent.Type.DOWN) {
-            naechstePhase()
-            schalten(phasen[aktuellePhase])
-        }
     }
 
     private fun naechstePhase() {
@@ -32,25 +27,10 @@ object Ampel : Controller {
     }
 
     private fun schalten(phase: Phase) {
-        when (phase) {
-            Phase.AUS -> {
-                lampeRot.aus(); lampeGelb.aus(); lampeGruen.aus()
-            }
-            Phase.ROT -> {
-                lampeRot.an(); lampeGelb.aus(); lampeGruen.aus()
-            }
-            Phase.ROTGELB -> {
-                lampeRot.an(); lampeGelb.an(); lampeGruen.aus()
-            }
-            Phase.GRUEN -> {
-                lampeRot.aus(); lampeGelb.aus(); lampeGruen.an()
-            }
-            Phase.GELB -> {
-                lampeRot.aus(); lampeGelb.an(); lampeGruen.aus()
-            }
-        }
+        // Hinweis:
+        // Phase.AUS bedeutet lampeRot.aus(); lampeGelb.aus(); lampeGruen.aus()
     }
 
-    fun istGruen() = phasen[aktuellePhase] == Phase.GRUEN
+    fun istGruen() = false
 
 }
