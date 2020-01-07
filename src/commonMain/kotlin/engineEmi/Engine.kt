@@ -140,15 +140,15 @@ class Engine {
      */
     fun register(o: Any) {
         if (o is Array<*>)
-            o.map { it?.let { register(it); println("isArray") } }
+            o.map { it?.let { register(it) } }
         if (o is Collection<*>)
-            o.map { it?.let { register(it); println("isArray") } }
+            o.map { it?.let { register(it) } }
         if (o is Ebody)
-            registerBody(o).also { println("isEbody") }
+            registerBody(o)
         if (o is CanvasElement)
-            registerCanvasElement(o).also { println("isCanvasElement") }
+            registerCanvasElement(o)
         if (o is Controller)
-            registerController(o).also { println("Controller") }
+            registerController(o)
     }
 }
 

@@ -32,11 +32,10 @@ fun main() {
              */
             init {
                 view.width = 510
-                view.height = 510
-                ArrayController.engine = engine
+                view.height = 250
                 ArrayController.arrayErzeugen(100)
                 ArrayController.sortieralgorithmus = BubbleSort
-                ArrayController.sortieren()
+                // ArrayController.sortieren()
             }
 
             /**

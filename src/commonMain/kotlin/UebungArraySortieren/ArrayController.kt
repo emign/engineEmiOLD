@@ -1,7 +1,7 @@
 package UebungArraySortieren
 
 import com.soywiz.korim.color.RGBA
-import engineEmi.Engine
+import engine
 import engineEmi.ScreenElements.CanvasElements.Rechteck
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -11,21 +11,14 @@ object ArrayController {
 
     lateinit var array: Array<Rechteck>
     var sortieralgorithmus: Sortieralgorithmus = KotlinSortierer
-    val breite = 5
-    val startX = 10
-    val startY = 200
-    val abstand = 0
-    val randomSubColor: Int
+    private val breite = 5
+    private val startX = 10
+    private val startY = 200
+    private val abstand = 0
+    private val randomSubColor: Int
         get() = (0..255).random()
-    lateinit var engine: Engine
-
-    fun engineSetzen(engine: Engine) {
-        this.engine = engine
-    }
 
     fun arrayErzeugen(laenge: Int, untereZufallsGrenze: Int = 10, obereZufallsGrenze: Int = 100) {
-
-
         array = Array<Rechteck>(laenge) { i ->
             Rechteck(
                 x = startX + (i * (breite + abstand)),
@@ -35,15 +28,12 @@ object ArrayController {
                 hoehe = (untereZufallsGrenze..obereZufallsGrenze).random()
             ).apply { this.rotationDegrees = 180.0 }
         }
-
         engine.register(array)
     }
 
     fun sortieren() {
         CoroutineScope(Dispatchers.Default).launch {
-            println(sortieralgorithmus)
             sortieralgorithmus.sortieren(array)
-            println(array.map { it.hoehe }.toList())
             positionenAktualisieren()
         }
     }

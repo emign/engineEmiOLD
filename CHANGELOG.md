@@ -1,4 +1,15 @@
-### Update auf 0.19 (HEAD -> uebueng_array_sortieren)
+### Fertig (HEAD -> uebueng_array_sortieren)
+>Tue, 7 Jan 2020 11:30:17 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Update auf 0.19
 >Mon, 16 Dec 2019 14:43:54 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -31,7 +42,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### Tippfehler README.md (master)
+### Tippfehler README.md
 >Mon, 16 Dec 2019 14:39:26 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -42,7 +53,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### v0.19 (origin/master)
+### v0.19
 >Mon, 16 Dec 2019 14:32:51 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
