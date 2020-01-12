@@ -11,6 +11,7 @@ import com.soywiz.korge.box2d.worldView
 import com.soywiz.korge.input.onDown
 import com.soywiz.korge.input.onKeyDown
 import com.soywiz.korge.input.onKeyUp
+import com.soywiz.korge.view.camera
 import com.soywiz.korge.view.position
 import com.soywiz.korge.view.scale
 import com.soywiz.korgw.GameWindow
@@ -56,31 +57,35 @@ class Engine {
             width = view.width,
             height = view.height
         ) {
+
             views.clearColor = Colors.WHITE
             viewWillLoadBody()
+            val camera = camera {
 
-            // BOX2D
-            worldView {
-                position(view.width / 2, view.height / 2).scale(view.scale)
+                // BOX2D
+                worldView {
+                    position(view.width / 2, view.height / 2).scale(view.scale)
 
-                if (bodies.isNotEmpty()) {
-                    bodies.run {
-                        map { registerBodyWithWorld(it) }
-                        map { it.body }
+                    if (bodies.isNotEmpty()) {
+                        bodies.run {
+                            map { registerBodyWithWorld(it) }
+                            map { it.body }
+                        }
                     }
                 }
-            }
 
-            // CANVAS
-            if (!canvasElements.isEmpty()) {
-                canvasElements.run {
-                    map { it.prepareElement() }
-                    map { addChild(it) }
-                }
-                launch {
-                    while (true) {
-                        canvasElements.onEach { it.animate() }
-                        delay(delay)
+                // CANVAS
+                if (!canvasElements.isEmpty()) {
+
+                    canvasElements.run {
+                        map { it.prepareElement() }
+                        map { addChild(it) }
+                    }
+                    launch {
+                        while (true) {
+                            canvasElements.onEach { it.animate() }
+                            delay(delay)
+                        }
                     }
                 }
             }
@@ -90,8 +95,8 @@ class Engine {
             addEventListener<MouseEvent> { controllers.onEach { element -> element.reactToMouseEvent(it) } }
 
             keys {
-                onKeyDown { Keyboard.keyDown(it.key) }
-                onKeyUp { Keyboard.keyReleased(it.key) }
+                onKeyDown { Keyboard.keyDown(it.key); controllers.onEach { element -> element.reactToKeyEvent(it) } }
+                onKeyUp { Keyboard.keyReleased(it.key); controllers.onEach { element -> element.reactToKeyEvent(it) } }
             }
 
             mouse {
