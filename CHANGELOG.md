@@ -1,4 +1,15 @@
-### Fertig (HEAD -> uebueng_array_sortieren)
+### Reset to standard (HEAD -> master)
+>Sun, 12 Jan 2020 09:55:00 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Fertig (uebueng_array_sortieren)
 >Tue, 7 Jan 2020 11:30:17 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
