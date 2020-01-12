@@ -1,3 +1,14 @@
+### Korge 1.5.4.0 (HEAD -> master)
+>Sun, 12 Jan 2020 23:54:04 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
 ### Reset to standard
 >Sun, 12 Jan 2020 09:55:00 +0100
 
@@ -20,7 +31,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### KeyEventlistener hinzugefügt. Auch `Controller` Klasse überarbeitet (origin/master)
+### KeyEventlistener hinzugefügt. Auch `Controller` Klasse überarbeitet
 >Fri, 20 Dec 2019 09:59:45 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
