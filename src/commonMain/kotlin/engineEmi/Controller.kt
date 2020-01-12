@@ -1,6 +1,8 @@
 package engineEmi
 
+import com.soywiz.korev.KeyEvent
 import com.soywiz.korev.MouseEvent
+import engineEmi.Input.KeyEventReacteable
 import engineEmi.Input.MouseEventReacteable
 
 /**
@@ -8,8 +10,12 @@ import engineEmi.Input.MouseEventReacteable
  * z.B. Events entgegen nehmen können oder Anweisungen an andere Objekte schicken können.
  * Natürlich können auch [ScreenElement]e Controller sein
  */
-interface Controller : MouseEventReacteable {
+interface Controller : MouseEventReacteable, KeyEventReacteable {
     override fun reactToMouseEvent(event: MouseEvent) {
+
+    }
+
+    override fun reactToKeyEvent(event: KeyEvent) {
 
     }
 }

@@ -1,4 +1,4 @@
-### Reset to standard (HEAD -> master)
+### Reset to standard
 >Sun, 12 Jan 2020 09:55:00 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -11,6 +11,28 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 ### Fertig (uebueng_array_sortieren)
 >Tue, 7 Jan 2020 11:30:17 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### KeyEventlistener hinzugefügt. Auch `Controller` Klasse überarbeitet (origin/master)
+>Fri, 20 Dec 2019 09:59:45 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Cleanup
+>Mon, 16 Dec 2019 14:44:44 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
 
@@ -64,7 +86,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### v0.19
+### v0.19 (tag: 0.19)
 >Mon, 16 Dec 2019 14:32:51 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
