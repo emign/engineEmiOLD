@@ -11,6 +11,9 @@ import com.soywiz.korge.box2d.worldView
 import com.soywiz.korge.input.onDown
 import com.soywiz.korge.input.onKeyDown
 import com.soywiz.korge.input.onKeyUp
+import com.soywiz.korge.tiled.TiledMap
+import com.soywiz.korge.tiled.readTiledMap
+import com.soywiz.korge.tiled.tiledMapView
 import com.soywiz.korge.view.Camera
 import com.soywiz.korge.view.camera
 import com.soywiz.korge.view.position
@@ -19,10 +22,13 @@ import com.soywiz.korgw.GameWindow
 import com.soywiz.korim.color.Colors
 import com.soywiz.korio.async.delay
 import com.soywiz.korio.async.launch
+import com.soywiz.korio.file.std.resourcesVfs
 import engineEmi.Input.Keyboard
 import engineEmi.ScreenElements.Bodies.Ebody
 import engineEmi.ScreenElements.CanvasElements.CanvasElement
 import engineEmi.ScreenElements.ScreenElement
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 
 /**
  * Die Game-Engine. Sie ist ein Singleton und wird mit [Engine.run] gestartet.
@@ -44,6 +50,7 @@ class Engine {
     var title = "Engine Emi"
     var delay = 16.milliseconds
     var camera = Camera()
+    var map: TiledMap? = null
 
     fun init(initBody: () -> Unit) = this.apply {
         view.width = 1280
@@ -62,12 +69,13 @@ class Engine {
 
             views.clearColor = Colors.WHITE
             viewWillLoadBody()
-            camera = camera {
 
+
+            camera = camera {
+                map?.let { tiledMapView(it) }
                 // BOX2D
                 worldView {
                     position(view.width / 2, view.height / 2).scale(view.scale)
-
                     if (bodies.isNotEmpty()) {
                         bodies.run {
                             map { registerBodyWithWorld(it) }
@@ -90,6 +98,7 @@ class Engine {
                         }
                     }
                 }
+
             }
 
 
@@ -137,6 +146,16 @@ class Engine {
      */
     fun registerController(controller: Controller) {
         controllers.add(controller)
+    }
+
+    /**
+     * Registriert eine Map bei der Engine
+     * @param pathToMap String zum Pfad der Tiledmap (im Resources Ordner)
+     */
+    fun registerMap(pathToMap: String) {
+        CoroutineScope(Dispatchers.Default).launch {
+            this.map = resourcesVfs[pathToMap].readTiledMap()
+        }
     }
 
     /**

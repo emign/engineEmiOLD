@@ -1,3 +1,6 @@
+package engineEmi.Samples.sample
+
+import CamController
 import com.soywiz.korio.async.launch
 import engineEmi.Engine
 import engineEmi.ScreenElements.Bodies.Ebody
@@ -29,7 +32,9 @@ fun main() {
              * Code um die Engine zu konfigurieren.
              */
             init {
-
+                view.height = 300
+                view.width = 300
+                registerMap("gfx/map/sample.tmx")
             }
 
             /**
@@ -43,7 +48,7 @@ fun main() {
              * Code, der NACH dem Aufbau des Views ausgeführt wird
              */
             viewDidLoad {
-
+                engine.registerController(CamController(engine.camera))
             }
 
             start()

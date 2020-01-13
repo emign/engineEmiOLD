@@ -10,7 +10,8 @@ import com.soywiz.korge.view.Camera
 import com.soywiz.korio.async.launch
 import com.soywiz.korma.interpolation.Easing
 import engineEmi.Controller
-import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 
 abstract class CameraController(val camera: Camera) : Controller {
 
@@ -45,7 +46,7 @@ abstract class CameraController(val camera: Camera) : Controller {
     }
 
     private fun runInScope(action: suspend () -> Any) {
-        GlobalScope.launch {
+        CoroutineScope(Dispatchers.Default).launch {
             action()
         }
     }

@@ -1,3 +1,14 @@
+### Kamera Demo komplett (HEAD -> cameraDemo)
+>Mon, 13 Jan 2020 16:38:50 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
 ### Kamera hinzugefügt (dev_Camera)
 >Mon, 13 Jan 2020 11:49:58 +0100
 
