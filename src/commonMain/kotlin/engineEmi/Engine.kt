@@ -11,6 +11,7 @@ import com.soywiz.korge.box2d.worldView
 import com.soywiz.korge.input.onDown
 import com.soywiz.korge.input.onKeyDown
 import com.soywiz.korge.input.onKeyUp
+import com.soywiz.korge.view.Camera
 import com.soywiz.korge.view.camera
 import com.soywiz.korge.view.position
 import com.soywiz.korge.view.scale
@@ -42,6 +43,7 @@ class Engine {
     var viewDidLoadBody: suspend () -> Unit = {}
     var title = "Engine Emi"
     var delay = 16.milliseconds
+    var camera = Camera()
 
     fun init(initBody: () -> Unit) = this.apply {
         view.width = 1280
@@ -60,7 +62,7 @@ class Engine {
 
             views.clearColor = Colors.WHITE
             viewWillLoadBody()
-            val camera = camera {
+            camera = camera {
 
                 // BOX2D
                 worldView {

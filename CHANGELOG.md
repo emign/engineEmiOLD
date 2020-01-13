@@ -1,3 +1,14 @@
+### Kamera hinzugefügt (HEAD -> dev_Camera)
+>Mon, 13 Jan 2020 11:18:14 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
 ### Reset to standard
 >Sun, 12 Jan 2020 09:55:00 +0100
 
