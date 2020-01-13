@@ -7,6 +7,12 @@
 
 # Changelog`
 
+## v0.20 2020-01-13
+
+### Added
+- Korge 1.5.4.0 support
+- Kamera hinzugefügt
+
 ## v0.19 2019-12-16
 
 ### Added
