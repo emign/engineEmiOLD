@@ -1,7 +1,10 @@
+import com.soywiz.korev.KeyEvent
 import com.soywiz.korio.async.launch
+import engineEmi.Controller
 import engineEmi.Engine
 import engineEmi.ScreenElements.Bodies.Ebody
 import engineEmi.ScreenElements.CanvasElements.CanvasElement
+import engineEmi.ScreenElements.CanvasElements.SpriteAnimation
 import kotlinx.coroutines.GlobalScope
 
 
@@ -36,6 +39,21 @@ fun main() {
              * Code der VOR dem Aufbau des Views ausgeführt wird
              */
             viewWillLoad {
+                val s = SpriteAnimation(
+                    x = 200,
+                    y = 200,
+                    columns = 4,
+                    marginTop = 5,
+                    lines = 4,
+                    spriteHeight = 25,
+                    spriteWidth = 16,
+                    bildDatei = "gfx/character/character.png",
+                    skalierung = 3.0f
+                )
+
+                register(s)
+
+                register(AnimationsController(s))
 
             }
 
@@ -51,3 +69,10 @@ fun main() {
     }
 }
 
+class AnimationsController(val anim: SpriteAnimation) : Controller {
+
+    override fun reactToKeyEvent(event: KeyEvent) {
+        anim.play()
+        anim.y++
+    }
+}
