@@ -7,6 +7,14 @@
 
 # Changelog`
 
+## v0.21 2020-01-15
+
+### Added
+- SpriteAnimationen sind nun möglich. Siehe: `AnimationController.kt`, `SpriteAnimation.kt` und `SpriteView.kt`
+
+### Refined
+- Kleinere Anpassungen an `CanvasElement` zur Vereinfachung der Erstellung
+
 ## v0.20 2020-01-13
 
 ### Added

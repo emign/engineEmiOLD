@@ -1,4 +1,15 @@
-### AnimationController.kt, SpriteAnimation.kt und SpriteView.kt komplett (HEAD -> tileSetTest)
+### AnimationController.kt, SpriteAnimation.kt und SpriteView.kt komplett (HEAD -> master)
+>Wed, 15 Jan 2020 17:33:15 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### AnimationController.kt, SpriteAnimation.kt und SpriteView.kt komplett (origin/tileSetTest, tileSetTest)
 >Wed, 15 Jan 2020 17:30:09 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
@@ -31,7 +42,7 @@ Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
 
 
 
-### Kamera Demo komplett (master, cameraDemo)
+### Kamera Demo komplett (cameraDemo)
 >Mon, 13 Jan 2020 16:38:50 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
