@@ -13,9 +13,30 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+/**
+ * Verwaltet die Sprites für die Animation. Input ist eine SpriteMap (in der Regel PNG oder JPG), welche alle Phasen
+ * der Animation enthält. Die einzelnen Sprites werden dann anhand der als Parameter übergebenen
+ * Koordinaten ausgelesen.
+ * @property x x-Koordinate
+ * @property y y-Koordinate
+ * @property spriteWidth Breite des Einzelsprites in der Spritemap in Pixeln
+ * @property spriteHeight Höhe des Einzelsprites in der Spritemap in Pixeln
+ * @property marginTop Abstand des ersten Sprites von der oberen Grenze der Spritemap
+ * @property marginLeft Abstand des ersten Sprites von der linken Grenze der Spritemap
+ * @property columns Anzahl der Sprites in einer Zeile (von links nach rechts)
+ * @property lines Anzahl der Sprites in einer Reihe (von oben nach unten)
+ * @property offsetBetweenColumns Abstand zwischen den Spalten in Pixeln
+ * @property offsetBetweenLines Abstand zwischen den Zeilen in Pixeln
+ * @property skalierung Skalierung
+ * @property bildDatei Der String zur Bilddatei in Resources-Ordner
+ * @property bitmap Alternativ zur bildDatei kann auch direkt ein Bitmap übergeben werden. Dies ist
+ * insbesondere dann sinnvoll, wenn mehrere Animationen die gleiche Spritemap verwenden, um Ressourcen zu schonen
+ * @property spriteView Der View des Sprites. Muss vor der Initialisierung manuell erstellt werden
+ * @constructor
+ */
 class SpriteAnimation(
-    x: Number = 100.0,
-    y: Number = 100.0,
+    var x: Number = 100.0,
+    var y: Number = 100.0,
     var spriteWidth: Int = 16,
     var spriteHeight: Int = 16,
     var marginTop: Int = 0,
@@ -24,39 +45,40 @@ class SpriteAnimation(
     var lines: Int = 1,
     var offsetBetweenColumns: Int = 0,
     var offsetBetweenLines: Int = 0,
-    var skalierung: Float = 1.0f,
+    var skalierung: Double = 1.0,
     var bildDatei: String = "",
     val bitmap: Bitmap? = null,
     var spriteView: SpriteView
-) : CanvasElement(x = x.toDouble(), y = y.toDouble()) {
+) {
 
-
-    val defaultSprite = Bitmaps.transparent
+    private val defaultSprite = Bitmaps.transparent
     private var sprites: MutableList<BmpSlice> = mutableListOf(defaultSprite)
-    var currentSpriteIndex = 0
-    val currentSprite: BmpSlice
+    private var currentSpriteIndex = 0
+    private val currentSprite: BmpSlice
         get() = sprites[currentSpriteIndex]
-    var subAnimations = mutableMapOf("main" to this)
 
     init {
         CoroutineScope(Dispatchers.Default).launch {
             prepareElement()
         }
-        updateGraphics()
+        updateSpriteView()
     }
 
-    override fun updateGraphics() {
-        spriteView.refreshViewWithSprite(currentSprite, skalierung)
+    private fun updateSpriteView() {
+        spriteView.apply {
+            x = x
+            y = y
+            refreshViewWithSprite(currentSprite, skalierung)
+        }
     }
 
-    override suspend fun prepareElement() {
+    private suspend fun prepareElement() {
         var line = 0
         repeat(columns) { spalte ->
-            val resourceBitmap: Bitmap
-            if (bitmap is Bitmap) {
-                resourceBitmap = bitmap
+            val resourceBitmap: Bitmap = if (bitmap is Bitmap) {
+                bitmap
             } else {
-                resourceBitmap = resourcesVfs[bildDatei].readBitmap()
+                resourcesVfs[bildDatei].readBitmap()
             }
             addSpriteToList(
                 resourceBitmap.sliceWithSize(
@@ -70,7 +92,7 @@ class SpriteAnimation(
                 line++
             }
         }
-        updateGraphics()
+        updateSpriteView()
     }
 
     private fun addSpriteToList(sprite: BmpSlice) {
@@ -80,20 +102,20 @@ class SpriteAnimation(
         }
     }
 
-    override suspend fun onEveryFrame() {
-        updateGraphics()
-    }
-
-    fun nextSprite() {
+    private fun nextSprite() {
         currentSpriteIndex = (currentSpriteIndex + 1) % sprites.size
-        updateGraphics()
+        updateSpriteView()
     }
 
     private fun previousSprite() {
         currentSpriteIndex = (currentSpriteIndex - 1) % sprites.size
-        updateGraphics()
+        updateSpriteView()
     }
 
+    /**
+     * Spielt die Animation ab.
+     * @param timeBetweenSprites TimeSpan
+     */
     fun play(timeBetweenSprites: TimeSpan = 25.milliseconds) {
         CoroutineScope(Dispatchers.Default).launch {
             nextSprite()

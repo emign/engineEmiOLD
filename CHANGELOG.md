@@ -1,4 +1,15 @@
-### AnimationController funktioniert (HEAD -> tileSetTest)
+### AnimationController.kt, SpriteAnimation.kt und SpriteView.kt komplett (HEAD -> tileSetTest)
+>Wed, 15 Jan 2020 17:30:09 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### AnimationController funktioniert
 >Wed, 15 Jan 2020 14:30:34 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)

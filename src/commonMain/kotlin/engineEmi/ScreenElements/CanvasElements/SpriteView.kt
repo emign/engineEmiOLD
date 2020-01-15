@@ -1,22 +1,18 @@
 package engineEmi.ScreenElements.CanvasElements
-
-import com.soywiz.korev.Key
-import com.soywiz.korev.KeyEvent
 import com.soywiz.korge.view.image
 import com.soywiz.korge.view.position
 import com.soywiz.korge.view.scale
 import com.soywiz.korim.bitmap.Bitmaps
 import com.soywiz.korim.bitmap.BmpSlice
-import engineEmi.Controller
 
-class SpriteView(
-    x: Number = 100.0,
-    y: Number = 100.0,
-    var skalierung: Float = 1.0f,
-    var initialSprite: BmpSlice? = null
-) : Controller, CanvasElement(x = x.toDouble(), y = y.toDouble()) {
-
-    var sprite: BmpSlice = initialSprite ?: Bitmaps.transparent
+/**
+ * Ein SpriteView wird vor allem für Sprite-Animationen gebraucht
+ * Bei der Erstellung einer [SpriteAnimation] wird immer ein [SpriteView]
+ * benötigt, auf welchen die Animationen abgebildet werden.
+ * @constructor
+ */
+class SpriteView : CanvasElement() {
+    var sprite: BmpSlice = Bitmaps.transparent
         set(value) {
             field = value
             updateGraphics()
@@ -26,29 +22,25 @@ class SpriteView(
         updateGraphics()
     }
 
+    /**
+     * Aktualisiert das angezeigte Sprite
+     * @param sprite BmpSlice
+     * @param skalierung Double
+     */
+    fun refreshViewWithSprite(sprite: BmpSlice, skalierung: Double) {
+        this.sprite = sprite
+        this.scale = skalierung
+    }
+
     override suspend fun prepareElement() {
         super.prepareElement()
     }
 
-    fun refreshViewWithSprite(sprite: BmpSlice, skalierung: Float) {
-        this.sprite = sprite
-        this.skalierung = skalierung
-    }
 
     override fun updateGraphics() {
         removeChildren()
         image(sprite) {
             position(x, y)
-        }.scale(skalierung)
-    }
-
-    override fun reactToKeyEvent(event: KeyEvent) {
-        when (event.key) {
-            Key.LEFT -> x -= 10
-            Key.RIGHT -> x += 10
-            Key.DOWN -> y += 10
-            Key.UP -> y -= 10
-
-        }
+        }.scale(super.scale)
     }
 }

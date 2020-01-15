@@ -1,14 +1,7 @@
-import com.soywiz.korev.KeyEvent
-import com.soywiz.korim.format.readBitmap
 import com.soywiz.korio.async.launch
-import com.soywiz.korio.file.std.resourcesVfs
-import engineEmi.Controller
 import engineEmi.Engine
 import engineEmi.ScreenElements.Bodies.Ebody
-import engineEmi.ScreenElements.CanvasElements.AnimationController
 import engineEmi.ScreenElements.CanvasElements.CanvasElement
-import engineEmi.ScreenElements.CanvasElements.SpriteAnimation
-import engineEmi.ScreenElements.CanvasElements.SpriteView
 import kotlinx.coroutines.GlobalScope
 
 
@@ -44,88 +37,13 @@ fun main() {
              */
             viewWillLoad {
 
-                val bitmap = resourcesVfs["gfx/character/character.png"].readBitmap()
-
-                val spriteView = SpriteView()
-
-                val animationDown = SpriteAnimation(
-                    x = 200,
-                    y = 200,
-                    columns = 4,
-                    marginTop = 0,
-                    marginLeft = 1,
-                    lines = 1,
-                    spriteHeight = 32,
-                    spriteWidth = 16,
-                    bitmap = bitmap,
-                    skalierung = 3.0f,
-                    spriteView = spriteView
-                )
-
-                val animationRight = SpriteAnimation(
-                    x = 200,
-                    y = 200,
-                    columns = 4,
-                    lines = 1,
-                    marginTop = 32,
-                    marginLeft = 1,
-                    spriteWidth = 16,
-                    spriteHeight = 32,
-                    bitmap = bitmap,
-                    skalierung = 3.0f,
-                    spriteView = spriteView
-                )
-
-                val animationUp = SpriteAnimation(
-                    x = 200,
-                    y = 200,
-                    columns = 4,
-                    lines = 1,
-                    marginTop = 64,
-                    marginLeft = 1,
-                    spriteWidth = 16,
-                    spriteHeight = 32,
-                    bitmap = bitmap,
-                    skalierung = 3.0f,
-                    spriteView = spriteView
-                )
-
-                val animationLeft = SpriteAnimation(
-                    x = 200,
-                    y = 200,
-                    columns = 4,
-                    lines = 1,
-                    marginTop = 96,
-                    marginLeft = 1,
-                    spriteWidth = 16,
-                    spriteHeight = 32,
-                    bitmap = bitmap,
-                    skalierung = 3.0f,
-                    spriteView = spriteView
-                )
-
-
-                val characterAnimationController = AnimationController()
-                characterAnimationController.addAnimation("down", animationDown)
-                characterAnimationController.addAnimation("right", animationRight)
-                characterAnimationController.addAnimation("up", animationUp)
-                characterAnimationController.addAnimation("left", animationLeft)
-
-
-
-                register(spriteView)
-                register(characterAnimationController)
-
-
-                //register(characterAnimationController)
-
-
             }
 
             /**
              * Code, der NACH dem Aufbau des Views ausgeführt wird
              */
             viewDidLoad {
+
 
             }
 
@@ -134,10 +52,3 @@ fun main() {
     }
 }
 
-class AnimationsController(val anim: SpriteAnimation) : Controller {
-
-    override fun reactToKeyEvent(event: KeyEvent) {
-        anim.play()
-        anim.y++
-    }
-}

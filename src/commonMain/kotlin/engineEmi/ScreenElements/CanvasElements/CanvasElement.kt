@@ -8,8 +8,8 @@ import engineEmi.ScreenElements.ScreenElement
 
 
 abstract class CanvasElement(
-    x: Double,
-    y: Double
+    x: Double = 0.0,
+    y: Double = 0.0
 ) : Container(), ScreenElement {
 
     init {
