@@ -66,8 +66,7 @@ class BeweglicherKreis(
         this.y = event.y.toDouble()
     }
 
-    override suspend fun animate() {
-        super.animate()
+    override suspend fun onEveryFrame() {
         if (Keyboard.isKeyDown(Key.DOWN)) {
             radius--
         }

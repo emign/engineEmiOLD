@@ -2,9 +2,7 @@ package engineEmi.ScreenElements.CanvasElements
 
 import com.soywiz.klock.TimeSpan
 import com.soywiz.klock.milliseconds
-import com.soywiz.korge.view.image
-import com.soywiz.korge.view.position
-import com.soywiz.korge.view.scale
+import com.soywiz.korim.bitmap.Bitmap
 import com.soywiz.korim.bitmap.Bitmaps
 import com.soywiz.korim.bitmap.BmpSlice
 import com.soywiz.korim.bitmap.sliceWithSize
@@ -27,8 +25,11 @@ class SpriteAnimation(
     var offsetBetweenColumns: Int = 0,
     var offsetBetweenLines: Int = 0,
     var skalierung: Float = 1.0f,
-    var bildDatei: String
+    var bildDatei: String = "",
+    val bitmap: Bitmap? = null,
+    var spriteView: SpriteView
 ) : CanvasElement(x = x.toDouble(), y = y.toDouble()) {
+
 
     val defaultSprite = Bitmaps.transparent
     private var sprites: MutableList<BmpSlice> = mutableListOf(defaultSprite)
@@ -45,17 +46,20 @@ class SpriteAnimation(
     }
 
     override fun updateGraphics() {
-        removeChildren()
-        image(currentSprite) {
-            position(x, y)
-        }.scale(skalierung)
+        spriteView.refreshViewWithSprite(currentSprite, skalierung)
     }
 
     override suspend fun prepareElement() {
         var line = 0
         repeat(columns) { spalte ->
+            val resourceBitmap: Bitmap
+            if (bitmap is Bitmap) {
+                resourceBitmap = bitmap
+            } else {
+                resourceBitmap = resourcesVfs[bildDatei].readBitmap()
+            }
             addSpriteToList(
-                resourcesVfs[bildDatei].readBitmap().sliceWithSize(
+                resourceBitmap.sliceWithSize(
                     marginLeft + (spriteWidth + offsetBetweenColumns) * spalte,
                     marginTop + (spriteHeight + offsetBetweenLines) * line,
                     spriteWidth,
@@ -80,12 +84,14 @@ class SpriteAnimation(
         updateGraphics()
     }
 
-    private fun nextSprite() {
+    fun nextSprite() {
         currentSpriteIndex = (currentSpriteIndex + 1) % sprites.size
+        updateGraphics()
     }
 
     private fun previousSprite() {
         currentSpriteIndex = (currentSpriteIndex - 1) % sprites.size
+        updateGraphics()
     }
 
     fun play(timeBetweenSprites: TimeSpan = 25.milliseconds) {
@@ -94,6 +100,4 @@ class SpriteAnimation(
             delay(timeBetweenSprites)
         }
     }
-
-
 }

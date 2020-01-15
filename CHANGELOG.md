@@ -1,4 +1,15 @@
-### Kamera Demo komplett (HEAD -> tileSetTest)
+### AnimationController funktioniert (HEAD -> tileSetTest)
+>Wed, 15 Jan 2020 14:30:34 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Kamera Demo komplett
 >Tue, 14 Jan 2020 14:48:36 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)

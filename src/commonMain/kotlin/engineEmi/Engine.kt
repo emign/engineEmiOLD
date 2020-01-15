@@ -93,7 +93,7 @@ class Engine {
                     }
                     launch {
                         while (true) {
-                            canvasElements.onEach { it.animate() }
+                            canvasElements.onEach { it.onEveryFrame() }
                             delay(delay)
                         }
                     }
