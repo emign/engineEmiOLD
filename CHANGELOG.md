@@ -1,4 +1,15 @@
 ### Fixed https://github.com/emign/engineEmi/issues/1 (HEAD -> debug_issue_1)
+>Fri, 17 Jan 2020 20:46:32 +0100
+
+>Author: Nicolai Emig (nicolai.emig@amseegym.de)
+
+>Commiter: Nicolai Emig (nicolai.emig@amseegym.de)
+
+Signed-off-by: Nicolai Emig <nicolai.emig@amseegym.de>
+
+
+
+### Fixed https://github.com/emign/engineEmi/issues/1
 >Fri, 17 Jan 2020 20:46:08 +0100
 
 >Author: Nicolai Emig (nicolai.emig@amseegym.de)
