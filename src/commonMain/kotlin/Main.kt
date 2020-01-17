@@ -29,7 +29,9 @@ fun main() {
              * Code um die Engine zu konfigurieren.
              */
             init {
-
+                view.height = 300
+                view.width = 300
+                registerMap("gfx/map/sample.tmx")
             }
 
             /**
@@ -43,8 +45,7 @@ fun main() {
              * Code, der NACH dem Aufbau des Views ausgeführt wird
              */
             viewDidLoad {
-
-
+                engine.registerController(CamController(engine.camera))
             }
 
             start()
